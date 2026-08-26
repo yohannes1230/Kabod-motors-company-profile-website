@@ -1,16 +1,18 @@
 /**
  * VEHICLES SHOWCASE MODULE
- * Renders clean vehicle cards with highlights, and opens a modal with full manufacturer specs & disclaimers.
- * Supports URL deep-linking and empty fallback states.
+ * Renders clean vehicle cards with highlights, and opens an accessible modal with full manufacturer specs & disclaimers.
+ * Supports URL deep-linking, keyboard navigation, focus trap, and empty fallback states.
  */
 
 import { electricVehicles, vehicleDisclaimer } from '../data/vehicles.js';
+import { populateInquiry } from './inquiryForm.js';
 
 export function initVehiclesShowcase() {
   const container = document.getElementById('vehicles-grid-container');
   const specModal = document.getElementById('spec-modal');
   const specModalBody = document.getElementById('spec-modal-body');
   const specModalCloseBtn = document.getElementById('spec-modal-close');
+  let lastFocusedElement = null;
 
   if (!container) return;
 
@@ -23,7 +25,7 @@ export function initVehiclesShowcase() {
   container.innerHTML = electricVehicles.map(veh => `
     <div class="vehicle-card" data-id="${veh.id}">
       <div class="vehicle-media">
-        <img src="${veh.thumbnail}" alt="${veh.name}" loading="lazy" width="600" height="400">
+        <img src="${veh.thumbnail}" alt="${veh.name}" loading="lazy" decoding="async" width="600" height="400">
         <div class="vehicle-badge-overlay">
           <span class="badge badge-bronze">${veh.badge}</span>
         </div>
@@ -40,12 +42,12 @@ export function initVehiclesShowcase() {
           `).join('')}
         </ul>
         <div class="vehicle-actions">
-          <button class="btn btn-secondary btn-sm view-specs-btn" data-id="${veh.id}">
+          <button type="button" class="btn btn-secondary btn-sm view-specs-btn" data-id="${veh.id}" aria-haspopup="dialog">
             View Full Specs
           </button>
-          <a href="#contact" class="btn btn-primary btn-sm inquire-veh-btn" data-name="${veh.name}">
-            Inquire
-          </a>
+          <button type="button" class="btn btn-primary btn-sm inquire-veh-btn" data-name="${veh.name}" data-category="${veh.category}">
+            Request Quote
+          </button>
         </div>
       </div>
     </div>
@@ -55,6 +57,8 @@ export function initVehiclesShowcase() {
   function openSpecModal(vehicleId) {
     const veh = electricVehicles.find(v => v.id === vehicleId);
     if (!veh || !specModal || !specModalBody) return;
+
+    lastFocusedElement = document.activeElement;
 
     const specs = veh.manufacturerSpecs;
     const specRows = Object.entries(specs).map(([key, val]) => {
@@ -90,31 +94,42 @@ export function initVehiclesShowcase() {
       </div>
 
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap;">
-        <button class="btn btn-secondary btn-sm close-modal-action-btn">Close</button>
-        <a href="#contact" class="btn btn-primary btn-sm modal-inquire-btn" data-name="${veh.name}">
+        <button type="button" class="btn btn-secondary btn-sm close-modal-action-btn">Close</button>
+        <button type="button" class="btn btn-primary btn-sm modal-inquire-btn" data-name="${veh.name}" data-category="${veh.category}">
           Request Custom Import Quote for ${veh.name}
-        </a>
+        </button>
       </div>
     `;
 
     specModal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    specModalCloseBtn?.focus();
 
     // Hook up buttons inside modal
     specModalBody.querySelector('.close-modal-action-btn')?.addEventListener('click', closeSpecModal);
     specModalBody.querySelector('.modal-inquire-btn')?.addEventListener('click', (e) => {
       closeSpecModal();
-      prefillInquiry(veh.name, 'Electric Vehicles');
+      populateInquiry({
+        interest: 'Electric Vehicles',
+        productName: veh.name,
+        category: veh.category
+      });
     });
   }
 
   function closeSpecModal() {
-    specModal?.classList.remove('open');
+    if (!specModal?.classList.contains('open')) return;
+    specModal.classList.remove('open');
     document.body.style.overflow = '';
+    
     if (window.location.hash.includes('modal=')) {
       if (history.replaceState) {
-        history.replaceState(null, '', '#vehicles');
+        history.replaceState(null, '', '#products?tab=vehicles');
       }
+    }
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
     }
   }
 
@@ -137,7 +152,7 @@ export function initVehiclesShowcase() {
       if (vehId) {
         openSpecModal(vehId);
         if (history.replaceState) {
-          history.replaceState(null, '', `#vehicles?modal=${vehId}`);
+          history.replaceState(null, '', `#products?modal=${vehId}`);
         }
       }
     }
@@ -145,7 +160,12 @@ export function initVehiclesShowcase() {
     const inqBtn = e.target.closest('.inquire-veh-btn');
     if (inqBtn) {
       const vehName = inqBtn.getAttribute('data-name');
-      prefillInquiry(vehName, 'Electric Vehicles');
+      const vehCat = inqBtn.getAttribute('data-category');
+      populateInquiry({
+        interest: 'Electric Vehicles',
+        productName: vehName,
+        category: vehCat
+      });
     }
   });
 
@@ -163,16 +183,3 @@ export function initVehiclesShowcase() {
   checkUrlForModal();
   window.addEventListener('hashchange', checkUrlForModal);
 }
-
-function prefillInquiry(productName, category) {
-  const interestSelect = document.getElementById('inquiry-interest');
-  const messageTextarea = document.getElementById('inquiry-message');
-  
-  if (interestSelect) {
-    interestSelect.value = category || 'Electric Vehicles';
-  }
-  if (messageTextarea && productName) {
-    messageTextarea.value = `Hello Kabod Motors team, I would like to request availability, delivery timelines, and pricing for the ${productName}.`;
-  }
-}
-

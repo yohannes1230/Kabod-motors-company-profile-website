@@ -1,10 +1,11 @@
 /**
  * PRODUCT SHOWCASE MODULE
  * Renders Maxtorm Batteries, Koryo Lubricants, and Sinotruk Howo Heavy Machinery
- * with tab deep-linking and robust fallback states.
+ * with tab deep-linking, contextual inquiry pre-population, and robust fallback states.
  */
 
 import { maxtormBatteries, koryoLubricants, heavyMachinery, productDisclaimer } from '../data/products.js';
+import { populateInquiry } from './inquiryForm.js';
 
 export function initProductShowcase() {
   const tabButtons = document.querySelectorAll('.product-tab-btn');
@@ -32,7 +33,6 @@ export function initProductShowcase() {
       const targetTab = btn.getAttribute('data-tab');
       if (targetTab) {
         switchTab(targetTab);
-        // Optional subtle hash update
         if (history.replaceState) {
           history.replaceState(null, '', `#products?tab=${targetTab}`);
         }
@@ -47,7 +47,7 @@ export function initProductShowcase() {
       const match = hash.match(/tab=([a-z0-9_-]+)/i);
       if (match && match[1]) {
         const tabName = match[1].toLowerCase();
-        if (['energy', 'lubricants', 'machinery'].includes(tabName)) {
+        if (['vehicles', 'energy', 'lubricants', 'machinery'].includes(tabName)) {
           switchTab(tabName);
         }
       }
@@ -62,7 +62,7 @@ export function initProductShowcase() {
       energyContainer.innerHTML = maxtormBatteries.map(bat => `
         <div class="prod-item-card">
           <div class="prod-item-media">
-            <img src="${bat.image}" alt="${bat.name}" loading="lazy" width="400" height="280">
+            <img src="${bat.image}" alt="${bat.name}" loading="lazy" decoding="async" width="400" height="280">
             <span class="badge badge-bronze" style="position: absolute; top: 1rem; right: 1rem;">${bat.badge}</span>
           </div>
           <div class="prod-item-body">
@@ -83,9 +83,9 @@ export function initProductShowcase() {
             </table>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem;">
-              <a href="#contact" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${bat.name}" data-cat="Batteries / Energy (Maxtorm)" style="width: 100%;">
+              <button type="button" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${bat.name}" data-cat="Batteries / Energy" style="width: 100%;">
                 Inquire / Request Pricing
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ export function initProductShowcase() {
       lubricantsContainer.innerHTML = koryoLubricants.map(oil => `
         <div class="prod-item-card">
           <div class="prod-item-media">
-            <img src="${oil.image}" alt="${oil.name}" loading="lazy" width="400" height="280">
+            <img src="${oil.image}" alt="${oil.name}" loading="lazy" decoding="async" width="400" height="280">
             <span class="badge badge-blue" style="position: absolute; top: 1rem; right: 1rem;">${oil.badge}</span>
           </div>
           <div class="prod-item-body">
@@ -118,9 +118,9 @@ export function initProductShowcase() {
             </table>
 
             <div style="margin-top: 1.5rem;">
-              <a href="#contact" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${oil.name}" data-cat="Premium Lubricants (Koryo Oil)" style="width: 100%;">
+              <button type="button" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${oil.name}" data-cat="Lubricants" style="width: 100%;">
                 Order / Inquire
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ export function initProductShowcase() {
       machineryContainer.innerHTML = heavyMachinery.map(mach => `
         <div class="prod-item-card">
           <div class="prod-item-media">
-            <img src="${mach.image}" alt="${mach.name}" loading="lazy" width="400" height="280">
+            <img src="${mach.image}" alt="${mach.name}" loading="lazy" decoding="async" width="400" height="280">
             <span class="badge badge-bronze" style="position: absolute; top: 1rem; right: 1rem;">${mach.badge}</span>
           </div>
           <div class="prod-item-body">
@@ -149,9 +149,9 @@ export function initProductShowcase() {
             </ul>
 
             <div style="margin-top: auto; padding-top: 1rem;">
-              <a href="#contact" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${mach.name}" data-cat="Heavy Machinery (Sinotruk Howo)" style="width: 100%;">
+              <button type="button" class="btn btn-primary btn-sm prod-inquire-btn" data-name="${mach.name}" data-cat="Heavy Machinery" style="width: 100%;">
                 Request Machinery Quote
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -163,18 +163,16 @@ export function initProductShowcase() {
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.prod-inquire-btn');
     if (btn) {
-      const prodName = btn.getAttribute('data-name');
-      const prodCat = btn.getAttribute('data-cat');
-      const interestSelect = document.getElementById('inquiry-interest');
-      const messageTextarea = document.getElementById('inquiry-message');
-      if (interestSelect && prodCat) interestSelect.value = prodCat;
-      if (messageTextarea && prodName) {
-        messageTextarea.value = `Hello Kabod Motors team, I would like to request technical documentation, availability, and pricing for ${prodName}.`;
-      }
+      const prodName = btn.getAttribute('data-name') || '';
+      const prodCat = btn.getAttribute('data-cat') || 'General Inquiry';
+      populateInquiry({
+        interest: prodCat,
+        productName: prodName,
+        category: prodCat
+      });
     }
   });
 
   checkUrlForTab();
   window.addEventListener('hashchange', checkUrlForTab);
 }
-

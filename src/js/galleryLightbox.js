@@ -1,6 +1,6 @@
 /**
  * GALLERY & LIGHTBOX MODULE
- * Category filtering across all audited assets and full-featured fullscreen lightbox
+ * Category filtering across all 40 audited assets, accessible fullscreen lightbox with touch/swipe & keyboard support.
  */
 
 import { galleryItems } from '../data/gallery.js';
@@ -15,6 +15,7 @@ export function initGalleryLightbox() {
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
+  let lastFocusedThumb = null;
 
   let currentCategory = 'all';
   let activeItems = [...galleryItems];
@@ -28,8 +29,8 @@ export function initGalleryLightbox() {
       : galleryItems.filter(item => item.category === cat);
 
     galleryGrid.innerHTML = activeItems.map((item, idx) => `
-      <div class="gallery-item" data-index="${idx}">
-        <img src="${item.src}" alt="${item.title}" loading="lazy" width="400" height="300">
+      <div class="gallery-item" data-index="${idx}" tabindex="0" role="button" aria-label="View ${item.title}">
+        <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async" width="400" height="300">
         <div class="gallery-overlay">
           <span class="badge badge-bronze" style="margin-bottom: 0.35rem; align-self: flex-start;">${item.tag}</span>
           <h5>${item.title}</h5>
@@ -42,8 +43,12 @@ export function initGalleryLightbox() {
   // Filter Buttons
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
       const cat = btn.getAttribute('data-filter') || 'all';
       renderGallery(cat);
     });
@@ -52,6 +57,7 @@ export function initGalleryLightbox() {
   // Lightbox functions
   function openLightbox(index) {
     if (index < 0 || index >= activeItems.length) return;
+    lastFocusedThumb = document.activeElement;
     currentIndex = index;
     const item = activeItems[currentIndex];
 
@@ -59,16 +65,21 @@ export function initGalleryLightbox() {
       lightboxImg.src = item.src;
       lightboxImg.alt = item.title;
       lightboxTitle.textContent = item.title;
-      lightboxCaption.textContent = `${item.caption} (${item.tag})`;
+      lightboxCaption.textContent = `${item.caption} • Category: ${item.tag}`;
     }
 
     lightboxModal?.classList.add('open');
     document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
   }
 
   function closeLightbox() {
-    lightboxModal?.classList.remove('open');
+    if (!lightboxModal?.classList.contains('open')) return;
+    lightboxModal.classList.remove('open');
     document.body.style.overflow = '';
+    if (lastFocusedThumb && typeof lastFocusedThumb.focus === 'function') {
+      lastFocusedThumb.focus();
+    }
   }
 
   function showPrev() {
@@ -81,12 +92,23 @@ export function initGalleryLightbox() {
     openLightbox(currentIndex);
   }
 
-  // Click on gallery item
+  // Click / Enter on gallery item
   galleryGrid?.addEventListener('click', (e) => {
     const item = e.target.closest('.gallery-item');
     if (item) {
       const idx = parseInt(item.getAttribute('data-index') || '0', 10);
       openLightbox(idx);
+    }
+  });
+
+  galleryGrid?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const item = e.target.closest('.gallery-item');
+      if (item) {
+        e.preventDefault();
+        const idx = parseInt(item.getAttribute('data-index') || '0', 10);
+        openLightbox(idx);
+      }
     }
   });
 
@@ -98,7 +120,7 @@ export function initGalleryLightbox() {
     if (e.target === lightboxModal) closeLightbox();
   });
 
-  // Keyboard navigation
+  // Keyboard navigation inside lightbox
   document.addEventListener('keydown', (e) => {
     if (!lightboxModal?.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();

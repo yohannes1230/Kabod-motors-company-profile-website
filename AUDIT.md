@@ -5,8 +5,9 @@
 - **Primary Domain/Entity**: Kabod Motors / Kabod Trading (Established 2016, Addis Ababa, Ethiopia)
 - **Framework / Core Tech**: Vanilla JavaScript (ES Modules), HTML5 Semantic Structure, Vanilla CSS Design System with CSS Custom Properties (Tokens)
 - **Build Tool / Bundler**: Vite `v5.4.21`
-- **Asset Pipeline**: 100% WebP image format, responsive sizes, lazy-loading
-- **Conversion Funnel**: Asynchronous RFQ submission with automated mailto and WhatsApp failover dispatch
+- **Asset Pipeline**: 100% WebP image format, responsive sizes, native lazy-loading, decoding async
+- **Conversion Funnel**: Asynchronous RFQ submission with honeypot anti-spam protection, contextual pre-population across all products, and automated Email/WhatsApp direct fallback dispatch
+- **Mobile Experience**: Responsive design (375px - 1920px+), smooth slide-out drawer, and persistent bottom conversion action bar (Call, WhatsApp, Request Quote)
 
 ---
 
@@ -22,6 +23,7 @@ The site content is partitioned into two distinct verification tiers to eliminat
 - **Head Office Address**: Jacros Area, Around Faith Bible International Church – Good News Chapel, Bole Sub-City, Addis Ababa, Ethiopia
 - **Verified Contacts**:
   - Telephone: `+251-911235960`
+  - WhatsApp: `+251-911235960`
   - Fax: `+251-130295151`
   - Official Email: `Kabodtrading094@gmail.com`
 - **International Presence**: UAE Sister Company coordinating regional trade, logistics, and customs staging
@@ -73,31 +75,19 @@ The site content is partitioned into two distinct verification tiers to eliminat
 ## 5. RFQ Conversion Funnel & Lead Protection
 - **Form Architecture**:
   - Asynchronous JSON dispatch to configured endpoint (`VITE_FORM_ENDPOINT` or Formspree).
+  - Anti-spam honeypot filtering hidden from genuine users.
+  - Safe DOM text node construction protecting against XSS vulnerabilities.
   - Active submitting state with loading spinner and button lock.
-  - Success state with inquiry reference and confirmation.
+  - Success message: `"Thank you. Your inquiry has been sent to Kabod Motors."`
 - **Fail-Safe Fallback**:
   - If the endpoint encounters network errors or submission caps, the form automatically engages a dual-channel fallback:
     1. **Pre-populated Email** (`mailto:Kabodtrading094@gmail.com`) with complete RFQ payload.
     2. **Instant WhatsApp Dispatch** (+251911235960) with formatted inquiry details.
-  - Zero dropped leads even during total API downtime or offline submissions.
+    3. **Direct Telephone Call** (+251911235960) action button.
 
 ---
 
 ## 6. Deep-Linking & UX Architecture
 - **Tab State Synchronization**: `#products?tab=energy`, `#products?tab=lubricants`, `#products?tab=machinery` deep-links directly activate the respective catalog views.
-- **Modal Deep-Linking**: `#vehicles?modal=yangwang-u8` opens the full technical specification drawer automatically.
-- **Fallback UI**: Dynamic containers render informative fallback empty states if dataset arrays are empty.
-- **Accessibility (a11y)**: Focus states, ARIA roles (`role="tab"`, `aria-selected`, `role="dialog"`), and full keyboard navigation (`Escape` to close modals, Arrow keys for gallery lightbox).
-
----
-
-## 7. Known Limits & Production Deployment Readiness
-
-### Operational Limits:
-- **Formspree Free Tier**: Free Formspree forms have a 50 submissions/month cap. For enterprise volume, upgrade to Formspree Gold or configure a dedicated webhook in `VITE_FORM_ENDPOINT`.
-- **Manufacturer Press Imagery**: While disclaimers protect commercial intent, replacing third-party press photos with Kabod's own warehouse and yard photography upon local arrival is recommended.
-
-### Deployment Instructions:
-1. Run `npm run build` to generate `/dist`.
-2. Connect repository to Vercel, Netlify, or GitHub Pages.
-3. If using a custom webhook or Formspree endpoint, add `VITE_FORM_ENDPOINT=https://formspree.io/f/your_form_id` in project environment variables.
+- **Modal Deep-Linking**: `#products?modal=yangwang-u8` opens the full technical specification drawer automatically.
+- **Accessibility (WCAG 2.2 AA)**: Focus restoration, ARIA dialog roles, ARIA tab roles, keyboard navigation (Escape to close, Left/Right arrow keys in lightbox), min 44px touch targets.

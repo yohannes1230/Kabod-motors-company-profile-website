@@ -23,8 +23,8 @@ export const galleryItems = [
   {
     id: "g-ev-02",
     category: "ev",
-    title: "Toyota bZ4X Touring Electric Crossover",
-    caption: "Dedicated e-TNGA platform all-electric crossover SUV with intelligent all-wheel drive.",
+    title: "Toyota bZ4X Electric Crossover",
+    caption: "Dedicated e-TNGA platform all-electric crossover SUV with intelligent all-wheel drive. Available configurations subject to confirmation.",
     src: "/images/brilliant-bronze_Large-Landscape.webp",
     dimensions: "3200x1800",
     tag: "Electric Crossover"

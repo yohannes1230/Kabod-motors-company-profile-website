@@ -243,7 +243,7 @@ export const electricVehicles = [
   },
   {
     id: "toyota-bz4x",
-    name: "Toyota bZ4X (Touring)",
+    name: "Toyota bZ4X",
     badge: "e-TNGA Crossover (Sourcing Portfolio)",
     category: "All-Electric Crossover SUV",
     sourcingStatus: "Custom Import on Order",
@@ -251,13 +251,13 @@ export const electricVehicles = [
     galleryImages: [
       "/images/brilliant-bronze_Large-Landscape.webp"
     ],
-    verifiedRepoAsset: "brilliant-bronze_Large-Landscape.webp (3200x1800 4K Asset with bZ4X Touring Plate)",
-    shortPositioning: "Toyota's dedicated all-electric crossover built on the e-TNGA dedicated architecture, engineered for all-weather traction and robust build quality.",
+    verifiedRepoAsset: "brilliant-bronze_Large-Landscape.webp (High-Resolution Asset)",
+    shortPositioning: "Toyota's dedicated all-electric crossover built on the e-TNGA dedicated architecture, engineered for all-weather traction and robust build quality (Available configurations subject to confirmation).",
     keyHighlights: [
       "Built on Toyota's Dedicated e-TNGA Platform",
       "X-MODE Intelligent All-Wheel Drive with Grip-Control",
       "Toyota Safety Sense 3.0 comprehensive safety suite",
-      "Long-term battery capacity retention engineering"
+      "Available configurations & market trims subject to confirmation"
     ],
     manufacturerSpecs: {
       sourcingModel: "Global Sourcing on Client Request",
