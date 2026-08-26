@@ -4,7 +4,7 @@
  * with tab deep-linking, contextual inquiry pre-population, and robust fallback states.
  */
 
-import { maxtormBatteries, koryoLubricants, heavyMachinery, productDisclaimer } from '../data/products.js';
+import { maxtormBatteries, koryoLubricants, heavyMachinery } from '../data/products.js';
 import { populateInquiry } from './inquiryForm.js';
 
 export function initProductShowcase() {
@@ -63,7 +63,7 @@ export function initProductShowcase() {
         <div class="prod-item-card">
           <div class="prod-item-media">
             <img src="${bat.image}" alt="${bat.name}" loading="lazy" decoding="async" width="400" height="280">
-            <span class="badge badge-bronze" style="position: absolute; top: 1rem; right: 1rem;">${bat.badge}</span>
+            <span class="badge badge-cyan" style="position: absolute; top: 1rem; right: 1rem;">${bat.badge}</span>
           </div>
           <div class="prod-item-body">
             <span class="prod-item-brand">${bat.brand}</span>
@@ -137,7 +137,7 @@ export function initProductShowcase() {
         <div class="prod-item-card">
           <div class="prod-item-media">
             <img src="${mach.image}" alt="${mach.name}" loading="lazy" decoding="async" width="400" height="280">
-            <span class="badge badge-bronze" style="position: absolute; top: 1rem; right: 1rem;">${mach.badge}</span>
+            <span class="badge badge-steel" style="position: absolute; top: 1rem; right: 1rem;">${mach.badge}</span>
           </div>
           <div class="prod-item-body">
             <span class="prod-item-brand">${mach.brand}</span>

@@ -7,10 +7,24 @@
   <meta name="description" content="Kabod Motors is a premier Ethiopian automotive and industrial solutions provider established in 2016. Sourcing world-class electric vehicles, Maxtorm Korea batteries, Koryo lubricants, and Sinotruk Howo heavy machinery.">
   <meta name="author" content="Kabod Motors">
   
+  <!-- Early Theme Setter to prevent Flash of Incorrect Theme -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('kabod_theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- Favicon & Canonical -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="canonical" href="https://kabodmotors.com/">
-  <meta name="theme-color" content="#0A0E17">
+  <meta name="theme-color" content="#07111F">
   
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="website">
@@ -87,10 +101,13 @@
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Actions & Mobile Trigger -->
+      <!-- Actions & Theme Toggle -->
       <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
         <a href="#contact" class="btn btn-primary btn-sm nav-quote-btn">
-          Request Quote
+          Request a Quote
         </a>
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
@@ -105,8 +122,13 @@
   <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
     <div class="mobile-nav-links">
-      <div style="font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; color: #FFFFFF; margin-bottom: 1.5rem;">
-        KABOD MOTORS
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+        <div style="font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; color: var(--color-text);">
+          KABOD MOTORS
+        </div>
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
       </div>
       <a href="#hero" class="mobile-nav-link">Home</a>
       <a href="#about" class="mobile-nav-link">About Kabod</a>
@@ -119,9 +141,9 @@
     </div>
 
     <div class="mobile-drawer-footer">
-      <p style="margin-bottom: 0.5rem; color: #FFFFFF; font-weight: 600;">Addis Ababa Head Office</p>
-      <p style="margin-bottom: 0.25rem;">Tel: <a href="tel:+251911235960" style="color: #60A5FA;">+251-911235960</a></p>
-      <p style="margin-bottom: 1rem;">Email: <a href="mailto:Kabodtrading094@gmail.com" style="color: #60A5FA;">Kabodtrading094@gmail.com</a></p>
+      <p style="margin-bottom: 0.5rem; color: var(--color-text); font-weight: 600;">Addis Ababa Head Office</p>
+      <p style="margin-bottom: 0.25rem;">Tel: <a href="tel:+251911235960" style="color: var(--color-primary);">+251-911235960</a></p>
+      <p style="margin-bottom: 1rem;">Email: <a href="mailto:Kabodtrading094@gmail.com" style="color: var(--color-primary);">Kabodtrading094@gmail.com</a></p>
       <a href="#contact" class="btn btn-primary btn-sm mobile-drawer-btn" style="width: 100%;">
         Request a Quote
       </a>
@@ -135,29 +157,29 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="hero-trust-tag">
+          <div class="hero-trust-tag animate-hero-tag">
             <span class="dot"></span>
             <span>Established 2016 • Addis Ababa, Ethiopia</span>
           </div>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title animate-hero-title">
             Automotive &amp; Industrial Solutions <span class="highlight-blue">Built for Ethiopia.</span>
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-description animate-hero-desc">
             Kabod Motors connects the Ethiopian market with world-class electric mobility, high-performance Maxtorm Korea energy storage, Koryo synthetic lubricants, and Sinotruk Howo heavy construction machinery sourced directly from leading international manufacturers.
           </p>
 
-          <div class="hero-ctas">
+          <div class="hero-ctas animate-hero-ctas">
             <a href="#contact" class="btn btn-primary">
               Request a Quote
             </a>
             <a href="#solutions" class="btn btn-secondary">
-              Explore Solutions
+              Explore Our Solutions
             </a>
           </div>
 
-          <div class="hero-pillars-strip">
+          <div class="hero-pillars-strip animate-hero-pillars">
             <div class="hero-pillar-item">
               <span class="hero-pillar-label">Founded</span>
               <span class="hero-pillar-val">2016</span>
@@ -168,7 +190,7 @@
             </div>
             <div class="hero-pillar-item">
               <span class="hero-pillar-label">Sourcing</span>
-              <span class="hero-pillar-val">Global Hubs</span>
+              <span class="hero-pillar-val">Korea • China • UAE</span>
             </div>
             <div class="hero-pillar-item">
               <span class="hero-pillar-label">Headquarters</span>
@@ -177,7 +199,7 @@
           </div>
         </div>
 
-        <div class="hero-media-wrapper">
+        <div class="hero-media-wrapper animate-hero-media">
           <div class="hero-image-card">
             <img src="/images/GettyImages-2043061619-e1710106398958.webp" alt="BYD Yangwang U8 Luxury Electric Vehicle" width="1440" height="958" fetchpriority="high">
             <div class="hero-image-caption">
@@ -185,7 +207,7 @@
                 <h4>BYD Yangwang U8</h4>
                 <p>e⁴ Quad-Motor Intelligent Flagship EV</p>
               </div>
-              <span class="badge badge-bronze">Next-Gen Mobility</span>
+              <span class="badge badge-cyan">Electric Mobility</span>
             </div>
           </div>
         </div>
@@ -198,7 +220,7 @@
        ========================================================================= -->
   <section class="credibility-strip" id="trust-strip">
     <div class="container">
-      <div class="credibility-grid">
+      <div class="credibility-grid reveal-on-scroll">
         <div class="credibility-card">
           <div class="credibility-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -215,7 +237,7 @@
           </div>
           <div class="credibility-text">
             <h4>Electric Mobility</h4>
-            <p>High-efficiency EV solutions</p>
+            <p>High-efficiency EV sourcing</p>
           </div>
         </div>
 
@@ -235,7 +257,7 @@
           </div>
           <div class="credibility-text">
             <h4>Koryo Lubricants</h4>
-            <p>100% Synthetic engine oils</p>
+            <p>100% Synthetic engine fluids</p>
           </div>
         </div>
 
@@ -258,8 +280,8 @@
   <section class="section" id="about">
     <div class="container">
       <div class="about-grid">
-        <div>
-          <span class="section-badge badge-bronze">Corporate Overview</span>
+        <div class="reveal-on-scroll">
+          <span class="section-badge badge-cyan">Corporate Overview</span>
           <h2 class="section-title">Built on Quality.<br>Positioned for Growth.</h2>
           <p class="section-subtitle">
             Established in 2016 in Addis Ababa by Abiy Belay Belete, Kabod Motors was created with a clear directive: to bridge the Ethiopian market with dependable, internationally certified automotive, energy, and heavy machinery products.
@@ -276,8 +298,8 @@
             </div>
           </div>
 
-          <div style="background: var(--color-bg-card); border-left: 3px solid var(--color-accent-blue); padding: 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 2rem;">
-            <p style="font-style: italic; color: #FFFFFF; font-size: 1.05rem; margin-bottom: 0.25rem;">
+          <div style="background: var(--color-surface); border-left: 3px solid var(--color-primary); padding: 1.25rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 2rem; border: 1px solid var(--color-border); border-left-width: 4px; border-left-color: var(--color-primary);">
+            <p style="font-style: italic; color: var(--color-text); font-size: 1.05rem; margin-bottom: 0.25rem; font-weight: 600;">
               "Quality Without Compromise"
             </p>
             <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0;">
@@ -295,12 +317,12 @@
           </div>
         </div>
 
-        <div>
+        <div class="reveal-on-scroll stagger-2">
           <h3 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Strategic Vision &amp; Mission</h3>
           
           <div class="value-item" style="margin-bottom: 1rem;">
             <h4>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 12 8"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 12 8"/></svg>
               Our Vision
             </h4>
             <p>To be the first choice of customer for world-class automotives for its quality and standard while setting product quality and standard for the sector.</p>
@@ -308,7 +330,7 @@
 
           <div class="value-item" style="margin-bottom: 1.5rem;">
             <h4>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               Our Mission
             </h4>
             <p>To empower customers by providing access to the world's most reliable automotive and industrial products, backed by exceptional service.</p>
@@ -337,7 +359,7 @@
       </div>
 
       <!-- Corporate Governance & Organization Chart -->
-      <div class="org-chart-wrapper">
+      <div class="org-chart-wrapper reveal-on-scroll">
         <div class="org-chart-title">
           <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Governance Structure</span>
           <h3>Company Organizational Framework</h3>
@@ -353,7 +375,7 @@
             <div class="org-node" style="width: auto; font-size: 0.85rem;">Legal Advisor</div>
             <div class="org-node" style="width: auto; font-size: 0.85rem;">Executive Admin Assistant</div>
           </div>
-          <div class="org-node" style="border-color: var(--color-accent-blue-border);">
+          <div class="org-node" style="border-color: var(--color-primary-border);">
             General Manager
           </div>
 
@@ -390,7 +412,7 @@
        ========================================================================= -->
   <section class="section section-darker" id="solutions">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <span class="section-badge">Business Capabilities</span>
         <h2 class="section-title">Six Pillars of Industrial &amp; Automotive Excellence</h2>
         <p class="section-subtitle">
@@ -400,7 +422,7 @@
 
       <div class="solutions-grid">
         <!-- 01. Electric Vehicles -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-1">
           <div class="solution-media">
             <img src="/images/GettyImages-2043061619-e1710106398958.webp" alt="Electric Vehicles &amp; Clean Mobility" loading="lazy" decoding="async">
             <span class="solution-number">01</span>
@@ -419,7 +441,7 @@
         </div>
 
         <!-- 02. Energy Storage -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-2">
           <div class="solution-media">
             <img src="/images/images (29).webp" alt="Energy Storage &amp; Batteries" loading="lazy" decoding="async">
             <span class="solution-number">02</span>
@@ -438,7 +460,7 @@
         </div>
 
         <!-- 03. Premium Lubricants -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-3">
           <div class="solution-media">
             <img src="/images/images (21).webp" alt="Premium Lubricants Koryo Oil" loading="lazy" decoding="async">
             <span class="solution-number">03</span>
@@ -457,7 +479,7 @@
         </div>
 
         <!-- 04. Heavy Machinery -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-1">
           <div class="solution-media">
             <img src="/images/Howo-Tx-Dump-Truck-6x4-1.webp" alt="Heavy Machinery &amp; Construction" loading="lazy" decoding="async">
             <span class="solution-number">04</span>
@@ -476,7 +498,7 @@
         </div>
 
         <!-- 05. Automotive Import -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-2">
           <div class="solution-media">
             <img src="/images/images (5).webp" alt="Automotive Import &amp; Procurement" loading="lazy" decoding="async">
             <span class="solution-number">05</span>
@@ -495,7 +517,7 @@
         </div>
 
         <!-- 06. Industrial Solutions -->
-        <div class="solution-card">
+        <div class="solution-card reveal-on-scroll stagger-3">
           <div class="solution-media">
             <img src="/images/images (22).webp" alt="Industrial Supplies" loading="lazy" decoding="async">
             <span class="solution-number">06</span>
@@ -521,8 +543,8 @@
        ========================================================================= -->
   <section class="section" id="products">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge badge-bronze">Sourcing Portfolio</span>
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge badge-cyan">Sourcing Portfolio</span>
         <h2 class="section-title">International Sourcing &amp; Products</h2>
         <p class="section-subtitle">
           Representative selection of electric vehicles, energy storage systems, synthetic engine fluids, and heavy machinery available for import and delivery on custom client order.
@@ -530,7 +552,7 @@
       </div>
 
       <!-- Product Category Tabs -->
-      <div class="product-tabs" role="tablist">
+      <div class="product-tabs reveal-on-scroll" role="tablist">
         <button class="product-tab-btn active" data-tab="vehicles" role="tab" aria-selected="true">Electric Vehicles</button>
         <button class="product-tab-btn" data-tab="energy" role="tab" aria-selected="false">Maxtorm Batteries</button>
         <button class="product-tab-btn" data-tab="lubricants" role="tab" aria-selected="false">Koryo Lubricants</button>
@@ -539,11 +561,11 @@
 
       <!-- Tab Panel 1: Electric Vehicles -->
       <div class="product-tab-panel" id="vehicles-panel">
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-subtle); padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">
             <strong>Representative Sourcing Notice:</strong> Vehicles listed are representative of our global supply network and import fulfillment capabilities. Specific trims, configurations, and pricing are confirmed upon custom quotation.
           </p>
-          <span class="badge badge-blue">Import on Order</span>
+          <span class="badge badge-cyan">Import on Order</span>
         </div>
 
         <div class="vehicles-grid" id="vehicles-grid-container">
@@ -553,16 +575,16 @@
 
       <!-- Tab Panel 2: Maxtorm Energy Storage -->
       <div class="product-tab-panel" id="energy-panel" style="display: none;">
-        <div style="margin-bottom: 2rem; background: var(--color-bg-card); border: 1px solid var(--color-border-medium); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="margin-bottom: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 260px;">
-            <span class="badge badge-bronze" style="margin-bottom: 0.5rem;">Sebang Global Battery Korea</span>
+            <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Sebang Global Battery Korea</span>
             <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem;">MAXTORM Battery Technology</h3>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">
               High-purity calcium alloy grids, cast-on plate straps, and microfiber separators engineered in South Korea for maximum cranking power and Start-Stop cycling.
             </p>
           </div>
           <div style="display: flex; gap: 1rem;">
-            <span class="badge badge-blue">AGM • EFB • SMF</span>
+            <span class="badge badge-cyan">AGM • EFB • SMF</span>
           </div>
         </div>
 
@@ -573,7 +595,7 @@
 
       <!-- Tab Panel 3: Koryo Lubricants -->
       <div class="product-tab-panel" id="lubricants-panel" style="display: none;">
-        <div style="margin-bottom: 2rem; background: var(--color-bg-card); border: 1px solid var(--color-border-medium); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="margin-bottom: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 260px;">
             <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Koryo Oil South Korea</span>
             <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem;">Synthetic Lubricant Formulations</h3>
@@ -582,7 +604,7 @@
             </p>
           </div>
           <div style="display: flex; gap: 1rem;">
-            <span class="badge badge-bronze">100% Synthetic</span>
+            <span class="badge badge-cyan">100% Synthetic</span>
           </div>
         </div>
 
@@ -593,9 +615,9 @@
 
       <!-- Tab Panel 4: Heavy Machinery -->
       <div class="product-tab-panel" id="machinery-panel" style="display: none;">
-        <div style="margin-bottom: 2rem; background: var(--color-bg-card); border: 1px solid var(--color-border-medium); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="margin-bottom: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 260px;">
-            <span class="badge badge-bronze" style="margin-bottom: 0.5rem;">Sinotruk Howo China</span>
+            <span class="badge badge-steel" style="margin-bottom: 0.5rem;">Sinotruk Howo China</span>
             <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem;">Construction Equipment &amp; Haulers</h3>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">
               Heavy-duty 6x4 dump trucks and transit concrete batching mixers built for infrastructure projects and mining sites.
@@ -618,7 +640,7 @@
        ========================================================================= -->
   <section class="section section-darker" id="b2b-solutions">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <span class="section-badge">Commercial Services</span>
         <h2 class="section-title">Institutional, Fleet &amp; Enterprise Solutions</h2>
         <p class="section-subtitle">
@@ -627,9 +649,9 @@
       </div>
 
       <div class="b2b-grid">
-        <div class="b2b-content-col">
-          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: var(--color-bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-            <div class="b2b-icon-wrap" style="color: var(--color-accent-blue);">
+        <div class="b2b-content-col reveal-on-scroll">
+          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <div class="b2b-icon-wrap" style="color: var(--color-primary); flex-shrink: 0;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div>
@@ -640,8 +662,8 @@
             </div>
           </div>
 
-          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: var(--color-bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-            <div class="b2b-icon-wrap" style="color: var(--color-accent-blue);">
+          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <div class="b2b-icon-wrap" style="color: var(--color-primary); flex-shrink: 0;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
             </div>
             <div>
@@ -652,8 +674,8 @@
             </div>
           </div>
 
-          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.75rem; background: var(--color-bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-            <div class="b2b-icon-wrap" style="color: var(--color-accent-blue);">
+          <div class="b2b-benefit-card" style="display: flex; gap: 1rem; margin-bottom: 1.75rem; background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <div class="b2b-icon-wrap" style="color: var(--color-primary); flex-shrink: 0;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 22 12 12 12 2 7"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
             </div>
             <div>
@@ -674,15 +696,15 @@
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-medium); background: var(--color-bg-surface);">
+        <div style="display: flex; flex-direction: column; gap: 1rem;" class="reveal-on-scroll stagger-2">
+          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); box-shadow: var(--shadow-sm);">
             <img src="/images/images (20).webp" alt="Commercial Fleet Staging" loading="lazy" decoding="async" style="width: 100%; height: 220px; object-fit: cover;">
             <div style="padding: 1rem;">
               <h5 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Project Site Delivery &amp; Staging</h5>
               <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0;">Multi-unit construction equipment fleet coordination.</p>
             </div>
           </div>
-          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border-medium); background: var(--color-bg-surface);">
+          <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); box-shadow: var(--shadow-sm);">
             <img src="/images/images (28).webp" alt="Industrial Refinery &amp; Blending" loading="lazy" decoding="async" style="width: 100%; height: 160px; object-fit: cover;">
             <div style="padding: 1rem;">
               <h5 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Direct Manufacturer Supply Agreements</h5>
@@ -699,7 +721,7 @@
        ========================================================================= -->
   <section class="section" id="sourcing">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <span class="section-badge">International Trade Channels</span>
         <h2 class="section-title">Global Sourcing • Local Delivery</h2>
         <p class="section-subtitle">
@@ -707,13 +729,13 @@
         </p>
       </div>
 
-      <div class="sourcing-map-card">
+      <div class="sourcing-map-card reveal-on-scroll">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 1rem;">
           <div>
-            <h3 style="font-size: 1.25rem; color: var(--color-text-primary);">Supply Chain Flow</h3>
+            <h3 style="font-size: 1.25rem; color: var(--color-text);">Supply Chain Flow</h3>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">Click any hub node to view verified sourcing scope.</p>
           </div>
-          <span class="badge badge-blue">Verified Logistics Network</span>
+          <span class="badge badge-cyan">Verified Logistics Network</span>
         </div>
 
         <div class="sourcing-flow-grid">
@@ -742,8 +764,8 @@
           </div>
         </div>
 
-        <div style="margin-top: 1.5rem; background: var(--color-bg-surface); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); padding: 1.25rem;" id="sourcing-details-display">
-          <h4 style="color: var(--color-text-primary); margin-bottom: 0.35rem;">South Korea — Advanced Energy &amp; Chemical Engineering</h4>
+        <div style="margin-top: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem;" id="sourcing-details-display">
+          <h4 style="color: var(--color-text); margin-bottom: 0.35rem;">South Korea — Advanced Energy &amp; Chemical Engineering</h4>
           <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 0;">
             Direct sourcing of Maxtorm automotive &amp; Start-Stop battery systems engineered by Sebang Global Battery Co., Ltd., and Koryo Oil high-performance synthetic lubricants.
           </p>
@@ -757,8 +779,8 @@
        ========================================================================= -->
   <section class="section section-darker" id="gallery">
     <div class="container">
-      <div class="section-header">
-        <span class="section-badge badge-bronze">Visual Catalog</span>
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge badge-cyan">Visual Catalog</span>
         <h2 class="section-title">Media &amp; Product Gallery</h2>
         <p class="section-subtitle">
           Browse our complete repository catalog of electric vehicles, heavy construction haulers, Maxtorm energy storage, and Koryo synthetic lubricants. Click any item to inspect in high resolution.
@@ -766,7 +788,7 @@
       </div>
 
       <!-- Gallery Filter Tabs -->
-      <div class="gallery-filter-bar">
+      <div class="gallery-filter-bar reveal-on-scroll">
         <button class="gallery-filter-btn active" data-filter="all" aria-selected="true">All Assets (40)</button>
         <button class="gallery-filter-btn" data-filter="ev" aria-selected="false">Electric Vehicles</button>
         <button class="gallery-filter-btn" data-filter="machinery" aria-selected="false">Heavy Machinery</button>
@@ -787,7 +809,7 @@
        ========================================================================= -->
   <section class="section" id="contact">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal-on-scroll">
         <span class="section-badge">Direct Commercial Inquiries</span>
         <h2 class="section-title">Let's Build the Next Move.</h2>
         <p class="section-subtitle">
@@ -797,8 +819,8 @@
 
       <div class="contact-grid">
         <!-- Lead Generation Form -->
-        <div class="inquiry-form-card">
-          <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: #FFFFFF;">Request a Quote / Information</h3>
+        <div class="inquiry-form-card reveal-on-scroll">
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--color-text);">Request a Quote / Information</h3>
           <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
             Our commercial team will review your specifications and respond with availability and formal pricing.
           </p>
@@ -868,7 +890,7 @@
         </div>
 
         <!-- Verified Contact Details (Tier A) -->
-        <div class="contact-info-cards">
+        <div class="contact-info-cards reveal-on-scroll stagger-2">
           <div class="contact-card">
             <div class="contact-card-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -910,12 +932,12 @@
             </div>
           </div>
 
-          <div class="contact-card" style="border-color: var(--color-accent-bronze-border); background: var(--color-accent-bronze-subtle);">
-            <div class="contact-card-icon" style="background: var(--color-accent-bronze-subtle); color: var(--color-accent-bronze-light); border-color: var(--color-accent-bronze-border);">
+          <div class="contact-card" style="border-color: var(--color-accent-border); background: var(--color-accent-soft);">
+            <div class="contact-card-icon" style="background: var(--color-accent-soft); color: var(--color-accent); border-color: var(--color-accent-border);">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="contact-card-content">
-              <h4 style="color: var(--color-accent-bronze-light);">International Sister Company</h4>
+              <h4 style="color: var(--color-accent);">International Sister Company</h4>
               <p style="color: var(--color-text-secondary);">United Arab Emirates (UAE)</p>
               <p style="font-size: 0.775rem; color: var(--color-text-muted);">Facilitating direct Middle East and East Africa trade logistics.</p>
             </div>
@@ -955,7 +977,7 @@
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="Enlarged view">
       <div class="lightbox-caption">
-        <h4 id="lightbox-title" style="color: #FFFFFF;"></h4>
+        <h4 id="lightbox-title"></h4>
         <p id="lightbox-caption"></p>
       </div>
     </div>
@@ -970,7 +992,7 @@
       Call
     </a>
     <a href="https://wa.me/251911235960" target="_blank" rel="noopener noreferrer" class="btn btn-secondary mobile-bar-btn" aria-label="Chat on WhatsApp">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
       WhatsApp
     </a>
     <a href="#contact" class="btn btn-primary mobile-bar-btn" aria-label="Request a Quote">
@@ -996,7 +1018,7 @@
           <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem;">
             Premier Ethiopian automotive and industrial solutions provider established in 2016. Sourcing certified electric vehicles, Maxtorm Korea batteries, Koryo synthetic lubricants, and Sinotruk Howo construction machinery.
           </p>
-          <span class="badge badge-bronze">Established 2016 • Addis Ababa</span>
+          <span class="badge badge-cyan">Established 2016 • Addis Ababa</span>
         </div>
 
         <div class="footer-col">
@@ -1027,15 +1049,15 @@
           <h4>Head Office Contact</h4>
           <p style="color: var(--color-text-secondary); margin-bottom: 0.25rem;">Addis Ababa, Bole Sub-City</p>
           <p style="color: var(--color-text-muted); font-size: 0.8rem; margin-bottom: 0.75rem;">Jacros Area, Around Faith Bible Intl. Church</p>
-          <p style="margin-bottom: 0.35rem;">Tel: <a href="tel:+251911235960" style="color: #60A5FA;">+251-911235960</a></p>
-          <p style="margin-bottom: 0.35rem;">Fax: <a href="tel:+251130295151" style="color: #60A5FA;">+251-130295151</a></p>
-          <p style="margin-bottom: 0.5rem;">Email: <a href="mailto:Kabodtrading094@gmail.com" style="color: #60A5FA;">Kabodtrading094@gmail.com</a></p>
+          <p style="margin-bottom: 0.35rem;">Tel: <a href="tel:+251911235960" style="color: var(--color-primary);">+251-911235960</a></p>
+          <p style="margin-bottom: 0.35rem;">Fax: <a href="tel:+251130295151" style="color: var(--color-primary);">+251-130295151</a></p>
+          <p style="margin-bottom: 0.5rem;">Email: <a href="mailto:Kabodtrading094@gmail.com" style="color: var(--color-primary);">Kabodtrading094@gmail.com</a></p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>© 2016 - 2026 Kabod Motors (Kabod Trading). All Rights Reserved.</p>
-        <p style="font-size: 0.75rem; color: var(--color-text-subtle);">
+        <p style="font-size: 0.75rem; color: var(--color-text-muted);">
           Disclaimer: Technical specifications are compiled from manufacturer data. Contact Kabod Motors commercial desk for verified local availability and formal quotations.
         </p>
       </div>

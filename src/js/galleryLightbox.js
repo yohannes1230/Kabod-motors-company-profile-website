@@ -32,7 +32,7 @@ export function initGalleryLightbox() {
       <div class="gallery-item" data-index="${idx}" tabindex="0" role="button" aria-label="View ${item.title}">
         <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async" width="400" height="300">
         <div class="gallery-overlay">
-          <span class="badge badge-bronze" style="margin-bottom: 0.35rem; align-self: flex-start;">${item.tag}</span>
+          <span class="badge badge-cyan" style="margin-bottom: 0.35rem; align-self: flex-start;">${item.tag}</span>
           <h5>${item.title}</h5>
           <p>${item.caption}</p>
         </div>

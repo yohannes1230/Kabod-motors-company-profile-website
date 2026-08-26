@@ -27,7 +27,7 @@ export function initVehiclesShowcase() {
       <div class="vehicle-media">
         <img src="${veh.thumbnail}" alt="${veh.name}" loading="lazy" decoding="async" width="600" height="400">
         <div class="vehicle-badge-overlay">
-          <span class="badge badge-bronze">${veh.badge}</span>
+          <span class="badge badge-cyan">${veh.badge}</span>
         </div>
       </div>
       <div class="vehicle-content">
@@ -74,23 +74,23 @@ export function initVehiclesShowcase() {
     specModalBody.innerHTML = `
       <div class="spec-modal-header">
         <div class="spec-modal-title">
-          <span class="badge badge-blue">${veh.category}</span>
+          <span class="badge badge-cyan">${veh.category}</span>
           <h3 style="margin-top: 0.5rem;">${veh.name}</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.25rem;">${veh.shortPositioning}</p>
         </div>
       </div>
       
-      <div style="margin: 1.5rem 0; border-radius: var(--radius-lg); overflow: hidden; max-height: 320px; background: var(--color-bg-subtle);">
+      <div style="margin: 1.5rem 0; border-radius: var(--radius-lg); overflow: hidden; max-height: 320px; background: var(--color-surface-subtle);">
         <img src="${veh.thumbnail}" alt="${veh.name}" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
 
-      <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Representative Specifications & Sourcing Data</h4>
+      <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--color-text);">Representative Specifications &amp; Sourcing Data</h4>
       <div class="spec-table-grid">
         ${specRows}
       </div>
 
       <div class="spec-disclaimer-alert">
-        <strong>Sourcing & Specification Notice:</strong> ${vehicleDisclaimer}
+        <strong>Sourcing &amp; Specification Notice:</strong> ${vehicleDisclaimer}
       </div>
 
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap;">
