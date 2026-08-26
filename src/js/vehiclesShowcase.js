@@ -1,6 +1,7 @@
 /**
  * VEHICLES SHOWCASE MODULE
  * Renders clean vehicle cards with highlights, and opens a modal with full manufacturer specs & disclaimers.
+ * Supports URL deep-linking and empty fallback states.
  */
 
 import { electricVehicles, vehicleDisclaimer } from '../data/vehicles.js';
@@ -12,6 +13,11 @@ export function initVehiclesShowcase() {
   const specModalCloseBtn = document.getElementById('spec-modal-close');
 
   if (!container) return;
+
+  if (!electricVehicles || electricVehicles.length === 0) {
+    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--color-text-muted);">Vehicle catalog currently undergoing scheduled update. Contact commercial desk for active sourcing requests.</div>`;
+    return;
+  }
 
   // Render clean vehicle cards
   container.innerHTML = electricVehicles.map(veh => `
@@ -74,19 +80,19 @@ export function initVehiclesShowcase() {
         <img src="${veh.thumbnail}" alt="${veh.name}" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
 
-      <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Manufacturer Technical Specifications</h4>
+      <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--color-text-primary);">Representative Specifications & Sourcing Data</h4>
       <div class="spec-table-grid">
         ${specRows}
       </div>
 
       <div class="spec-disclaimer-alert">
-        <strong>Manufacturer Specification Disclaimer:</strong> ${vehicleDisclaimer}
+        <strong>Sourcing & Specification Notice:</strong> ${vehicleDisclaimer}
       </div>
 
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap;">
         <button class="btn btn-secondary btn-sm close-modal-action-btn">Close</button>
         <a href="#contact" class="btn btn-primary btn-sm modal-inquire-btn" data-name="${veh.name}">
-          Request Quote for ${veh.name}
+          Request Custom Import Quote for ${veh.name}
         </a>
       </div>
     `;
@@ -105,6 +111,22 @@ export function initVehiclesShowcase() {
   function closeSpecModal() {
     specModal?.classList.remove('open');
     document.body.style.overflow = '';
+    if (window.location.hash.includes('modal=')) {
+      if (history.replaceState) {
+        history.replaceState(null, '', '#vehicles');
+      }
+    }
+  }
+
+  // Check URL for deep-linked modal
+  function checkUrlForModal() {
+    const hash = window.location.hash;
+    if (hash.includes('modal=')) {
+      const match = hash.match(/modal=([a-z0-9_-]+)/i);
+      if (match && match[1]) {
+        openSpecModal(match[1]);
+      }
+    }
   }
 
   // Event Listeners for Spec buttons
@@ -112,7 +134,12 @@ export function initVehiclesShowcase() {
     const specBtn = e.target.closest('.view-specs-btn');
     if (specBtn) {
       const vehId = specBtn.getAttribute('data-id');
-      if (vehId) openSpecModal(vehId);
+      if (vehId) {
+        openSpecModal(vehId);
+        if (history.replaceState) {
+          history.replaceState(null, '', `#vehicles?modal=${vehId}`);
+        }
+      }
     }
 
     const inqBtn = e.target.closest('.inquire-veh-btn');
@@ -132,6 +159,9 @@ export function initVehiclesShowcase() {
       closeSpecModal();
     }
   });
+
+  checkUrlForModal();
+  window.addEventListener('hashchange', checkUrlForModal);
 }
 
 function prefillInquiry(productName, category) {
@@ -145,3 +175,4 @@ function prefillInquiry(productName, category) {
     messageTextarea.value = `Hello Kabod Motors team, I would like to request availability, delivery timelines, and pricing for the ${productName}.`;
   }
 }
+

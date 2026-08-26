@@ -1,28 +1,37 @@
 /**
- * VEHICLES DATA & MANUFACTURER SPECIFICATIONS (Tier B)
- * Verified against local repository image assets.
+ * VEHICLES DATA & MANUFACTURER SPECIFICATIONS
  * 
- * DISCLAIMER: Technical specifications are compiled from authoritative manufacturer
- * data sheets. Specifications, trims, and equipment vary by market, year, and configuration.
- * Contact Kabod Motors directly for verified Ethiopian stock, pricing, and availability.
+ * SOURCING DISCLOSURE & TRADEMARK NOTICE:
+ * Models, trims, and technical specifications listed herein represent Kabod Motors'
+ * international supply chain capabilities and custom import portfolio. Exact in-stock
+ * inventory, market trims, and delivery lead times vary based on custom client orders
+ * and bilateral trade agreements.
+ * 
+ * All manufacturer trademarks, brand names, and logos (BYD, Toyota, Yangwang, etc.)
+ * are the property of their respective trademark holders. Display on this website is strictly
+ * for identification, editorial, and commercial sourcing capability reference.
+ * 
+ * Contact Kabod Motors commercial desk for verified stock status, custom import pricing,
+ * and Ethiopian regulatory clearance terms.
  */
 
-export const vehicleDisclaimer = "Manufacturer specifications provided for reference. Features, battery capacities, and performance metrics vary by market destination, model year, and trim level. Contact Kabod Motors for verified local availability and exact vehicle configurations.";
+export const vehicleDisclaimer = "Representative Sourcing Portfolio: Technical specifications are compiled from manufacturer data for reference. Features, battery capacities, and equipment vary by market destination, model year, and client trim requirements. Contact Kabod Motors directly for verified local availability, custom import lead times, and formal quotations.";
 
 export const electricVehicles = [
   {
     id: "yangwang-u8",
     name: "BYD Yangwang U8",
-    badge: "Flagship Luxury Off-Road EV",
+    badge: "Flagship Luxury Off-Road (Import on Order)",
     category: "Luxury Full-Size Off-Road SUV",
+    sourcingStatus: "Custom Import on Order",
     thumbnail: "/images/GettyImages-2043061619-e1710106398958.webp",
     galleryImages: [
       "/images/GettyImages-2043061619-e1710106398958.webp",
-      "/images/images (11).jfif",
-      "/images.jfif"
+      "/images/images (11).webp",
+      "/images.webp"
     ],
-    verifiedRepoAsset: "GettyImages-2043061619-e1710106398958.webp & images (11).jfif",
-    shortPositioning: "Ultra-luxury intelligent electric SUV featuring quad-motor independent drive, 360° tank-turn capability, and extreme all-terrain performance.",
+    verifiedRepoAsset: "GettyImages-2043061619-e1710106398958.webp & images (11).webp",
+    shortPositioning: "Ultra-luxury intelligent electric SUV featuring quad-motor independent drive, 360° tank-turn capability, and extreme all-terrain performance (Available via custom import).",
     keyHighlights: [
       "e⁴ Quad-Motor Independent All-Wheel Drive Platform",
       "Up to 1,180+ HP total system output with 0-100 km/h in ~3.6s",
@@ -30,6 +39,7 @@ export const electricVehicles = [
       "360° On-the-Spot Tank Turn & Emergency Floatation mode"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Available for Corporate / Individual Custom Import",
       drivetrain: "e⁴ Quad-Motor All-Wheel Drive (4 Independent Motors)",
       totalPower: "1,180+ HP (880 kW)",
       totalTorque: "1,280 Nm",
@@ -49,16 +59,17 @@ export const electricVehicles = [
   {
     id: "byd-sealion-7",
     name: "BYD Sealion 7 / Sea Lion 07",
-    badge: "Next-Gen Intelligent SUV",
+    badge: "Intelligent Fastback SUV (Import on Order)",
     category: "Mid-Size Performance Electric SUV",
-    thumbnail: "/images/images (2).jfif",
+    sourcingStatus: "Sourced on Client Order",
+    thumbnail: "/images/images (2).webp",
     galleryImages: [
-      "/images/images (2).jfif",
-      "/images/images (13).jfif",
-      "/images/images (14).jfif",
-      "/images.jfif"
+      "/images/images (2).webp",
+      "/images/images (13).webp",
+      "/images/images (14).webp",
+      "/images.webp"
     ],
-    verifiedRepoAsset: "images (2).jfif, images (13).jfif, images (14).jfif",
+    verifiedRepoAsset: "images (2).webp, images (13).webp, images (14).webp",
     shortPositioning: "Sleek aerodynamic fastback electric SUV built on BYD's ultra-advanced e-Platform 3.0 Evo with Cell-to-Body (CTB) structural battery integration.",
     keyHighlights: [
       "e-Platform 3.0 Evo with Cell-to-Body (CTB) Architecture",
@@ -67,6 +78,7 @@ export const electricVehicles = [
       "DiLink 100 Intelligent 15.6-inch Rotating Cockpit"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Direct Sourcing via Asian Trade Hubs",
       drivetrain: "Rear-Wheel Drive (RWD) / Dual-Motor Intelligent AWD",
       totalPower: "230 kW (RWD) / Up to 390 kW (AWD)",
       totalTorque: "380 Nm (RWD) / 690 Nm (AWD)",
@@ -85,15 +97,16 @@ export const electricVehicles = [
   {
     id: "byd-atto-3",
     name: "BYD Atto 3 (Yuan Plus)",
-    badge: "Global Urban EV Crossover",
+    badge: "Urban EV Crossover (Sourcing Portfolio)",
     category: "Compact Crossover EV",
-    thumbnail: "/images/images (1).jfif",
+    sourcingStatus: "Sourced on Client Order",
+    thumbnail: "/images/images (1).webp",
     galleryImages: [
-      "/images/images (1).jfif",
-      "/images/images (5).jfif",
-      "/images/images.jfif"
+      "/images/images (1).webp",
+      "/images/images (5).webp",
+      "/images/images.webp"
     ],
-    verifiedRepoAsset: "images (1).jfif (Dark edition) & images (5).jfif (Glacier White)",
+    verifiedRepoAsset: "images (1).webp (Dark edition) & images (5).webp (Glacier White)",
     shortPositioning: "Internationally acclaimed all-electric compact SUV featuring spirited acceleration, expressive interior styling, and market-proven reliability.",
     keyHighlights: [
       "Ultra-Safe LFP Blade Battery with zero thermal runaway penetration risk",
@@ -102,6 +115,7 @@ export const electricVehicles = [
       "12.8-inch / 15.6-inch rotating touchscreen with full digital cluster"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Direct Sourcing & Delivery Coordination",
       drivetrain: "Front-Wheel Drive (FWD) Permanent Magnet Synchronous Motor",
       totalPower: "150 kW (204 HP)",
       totalTorque: "310 Nm",
@@ -120,15 +134,16 @@ export const electricVehicles = [
   {
     id: "byd-song-plus-ev",
     name: "BYD Song Plus EV (Seal U)",
-    badge: "Executive Family Electric SUV",
+    badge: "Executive Family SUV (Sourcing Portfolio)",
     category: "Mid-Size Executive SUV",
-    thumbnail: "/images/images (3).jfif",
+    sourcingStatus: "Sourced on Client Order",
+    thumbnail: "/images/images (3).webp",
     galleryImages: [
-      "/images/images (3).jfif",
-      "/images/images (7).jfif",
-      "/images/images (6).jfif"
+      "/images/images (3).webp",
+      "/images/images (7).webp",
+      "/images/images (6).webp"
     ],
-    verifiedRepoAsset: "images (3).jfif (Grey SUV) & images (7).jfif (Coastal Road)",
+    verifiedRepoAsset: "images (3).webp (Grey SUV) & images (7).webp (Coastal Road)",
     shortPositioning: "Spacious, premium family electric SUV combining ocean aesthetics, whisper-quiet cabin acoustics, and long-distance touring comfort.",
     keyHighlights: [
       "Ocean-X Design Philosophy with low drag aerodynamic profile",
@@ -137,6 +152,7 @@ export const electricVehicles = [
       "Comprehensive ADAS suite with Level 2 semi-autonomous driving"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Sourced to Client Specification",
       drivetrain: "Front-Wheel Drive (FWD) Electric Motor",
       totalPower: "160 kW (218 HP)",
       totalTorque: "330 Nm",
@@ -155,15 +171,16 @@ export const electricVehicles = [
   {
     id: "byd-seagull",
     name: "BYD Seagull (Dolphin Mini)",
-    badge: "Urban Smart Mobility",
+    badge: "Urban Smart Mobility (Sourcing Portfolio)",
     category: "Urban Electric Hatchback",
-    thumbnail: "/images/images (4).jfif",
+    sourcingStatus: "Sourced on Client Order",
+    thumbnail: "/images/images (4).webp",
     galleryImages: [
-      "/images/images (4).jfif",
-      "/images/images (8).jfif",
-      "/images/images (12).jfif"
+      "/images/images (4).webp",
+      "/images/images (8).webp",
+      "/images/images (12).webp"
     ],
-    verifiedRepoAsset: "images (4).jfif (Green), images (8).jfif (White), images (12).jfif (Cockpit)",
+    verifiedRepoAsset: "images (4).webp (Green), images (8).webp (White), images (12).webp (Cockpit)",
     shortPositioning: "Highly agile, ultra-efficient city EV designed for daily metropolitan commuting, tight city parking, and exceptionally low running expenses.",
     keyHighlights: [
       "Compact 3.78m footprint for effortless urban maneuverability",
@@ -172,6 +189,7 @@ export const electricVehicles = [
       "30 kW / 40 kW DC fast charging support"
     ],
     manufacturerSpecs: {
+      sourcingModel: "High-Demand Urban Fleet Sourcing",
       drivetrain: "Front-Wheel Drive (FWD) Permanent Magnet Synchronous Motor",
       totalPower: "55 kW (75 HP)",
       totalTorque: "135 Nm",
@@ -190,14 +208,15 @@ export const electricVehicles = [
   {
     id: "byd-atto-2",
     name: "BYD Atto 2 / Yuan UP",
-    badge: "Compact Lifestyle Crossover",
+    badge: "Compact Lifestyle Crossover (Sourcing Portfolio)",
     category: "Subcompact Electric SUV",
-    thumbnail: "/images/images (9).jfif",
+    sourcingStatus: "Sourced on Client Order",
+    thumbnail: "/images/images (9).webp",
     galleryImages: [
-      "/images/images (9).jfif",
-      "/images/images.jfif"
+      "/images/images (9).webp",
+      "/images/images.webp"
     ],
-    verifiedRepoAsset: "images (9).jfif (Champagne Compact Crossover)",
+    verifiedRepoAsset: "images (9).webp (Champagne Compact Crossover)",
     shortPositioning: "Youthful subcompact electric crossover combining rugged SUV ground clearance with high-efficiency urban electric driving dynamics.",
     keyHighlights: [
       "e-Platform 3.0 integration with CTB structural battery packaging",
@@ -206,6 +225,7 @@ export const electricVehicles = [
       "W-HUD Head-Up Display & Wireless Smartphone Fast Charging"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Direct Sourcing via Asian Trade Hubs",
       drivetrain: "Front-Wheel Drive (FWD)",
       totalPower: "70 kW (94 HP) / 130 kW (174 HP)",
       totalTorque: "180 Nm / 290 Nm",
@@ -224,8 +244,9 @@ export const electricVehicles = [
   {
     id: "toyota-bz4x",
     name: "Toyota bZ4X (Touring)",
-    badge: "e-TNGA Electric Crossover",
+    badge: "e-TNGA Crossover (Sourcing Portfolio)",
     category: "All-Electric Crossover SUV",
+    sourcingStatus: "Custom Import on Order",
     thumbnail: "/images/brilliant-bronze_Large-Landscape.webp",
     galleryImages: [
       "/images/brilliant-bronze_Large-Landscape.webp"
@@ -239,6 +260,7 @@ export const electricVehicles = [
       "Long-term battery capacity retention engineering"
     ],
     manufacturerSpecs: {
+      sourcingModel: "Global Sourcing on Client Request",
       drivetrain: "Front-Wheel Drive (FWD) or Dual-Motor AWD with X-MODE",
       totalPower: "150 kW (FWD - 201 HP) / 160 kW (AWD - 214 HP)",
       totalTorque: "266 Nm (FWD) / 337 Nm (AWD)",

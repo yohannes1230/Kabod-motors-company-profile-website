@@ -34,7 +34,7 @@ export const businessSolutions = [
       "Zero-maintenance, leak-proof heavy duty casing"
     ],
     targetAudience: "Automotive repair networks, commercial transport fleets, industrial machinery, and vehicle owners.",
-    image: "/images/images (29).jfif"
+    image: "/images/images (29).webp"
   },
   {
     id: "premium-lubricants",
@@ -50,7 +50,7 @@ export const businessSolutions = [
       "Extended oil-drain intervals reducing commercial maintenance downtime"
     ],
     targetAudience: "Fleet maintenance facilities, heavy transport operators, automotive service centers, and industrial plants.",
-    image: "/images/images (21).jfif"
+    image: "/images/images (21).webp"
   },
   {
     id: "heavy-machinery",
@@ -82,7 +82,7 @@ export const businessSolutions = [
       "Custom bulk procurement packages for institutional and enterprise buyers"
     ],
     targetAudience: "Government institutions, corporate transport departments, car rental agencies, and dealerships.",
-    image: "/images/images (5).jfif"
+    image: "/images/images (5).webp"
   },
   {
     id: "industrial-solutions",
@@ -98,6 +98,6 @@ export const businessSolutions = [
       "Dedicated account management for long-term supply contracts"
     ],
     targetAudience: "Manufacturing industries, logistics hubs, processing facilities, and maintenance workshops.",
-    image: "/images/images (22).jfif"
+    image: "/images/images (22).webp"
   }
 ];

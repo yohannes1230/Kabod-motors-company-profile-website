@@ -1,14 +1,18 @@
 /**
- * PRODUCTS DATA & TECHNICAL SPECIFICATIONS (Tier B)
- * Verified against local repository image assets.
+ * PRODUCTS DATA & TECHNICAL SPECIFICATIONS
  * 
- * Sourced:
- * 1. Maxtorm Batteries (Sebang Global Battery Co., Ltd., South Korea)
- * 2. Koryo Oil (South Korea)
- * 3. Sinotruk Howo Heavy Machinery (China)
+ * SOURCING DISCLOSURE & TRADEMARK NOTICE:
+ * Product lines, specifications, and brand series listed represent Kabod Motors'
+ * global procurement capabilities across South Korea (Maxtorm/Sebang, Koryo Oil)
+ * and China (Sinotruk Howo).
+ * 
+ * Specific SKUs, viscosities, and equipment configurations are available on client order
+ * and subject to container-load minimums and stock confirmation.
+ * All brand names and trademarks (Maxtorm, Sebang Global, Koryo, Sinotruk) belong
+ * to their respective owners and are referenced solely for commercial identification.
  */
 
-export const productDisclaimer = "Technical specifications derived from manufacturer documentation. Capacities, packaging, and certifications may vary by production batch and destination market. Contact Kabod Motors for verified local availability.";
+export const productDisclaimer = "Representative Sourcing Portfolio: Technical specifications are compiled from manufacturer engineering documentation. Specific capacities, packaging formats, and delivery terms are confirmed upon formal quotation. Contact Kabod Motors commercial desk for active stock and import scheduling.";
 
 export const maxtormBatteries = [
   {
@@ -17,9 +21,9 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm AGM Start-Stop Battery",
     tagline: "Absorbent Glass Mat Technology for High Electrical Loads",
-    image: "/images/images (29).jfif",
-    diagramImage: "/images/images (35).jfif",
-    badge: "AGM / Start-Stop",
+    image: "/images/images (29).webp",
+    diagramImage: "/images/images (35).webp",
+    badge: "AGM / Start-Stop (Sourced on Order)",
     highlights: [
       "Engineered for modern vehicles equipped with regenerative braking & Start-Stop (ISS)",
       "3x to 4x higher cycle life compared to conventional flooded batteries",
@@ -27,6 +31,7 @@ export const maxtormBatteries = [
       "100% sealed, spill-proof, and maintenance-free design"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Supply Chain",
       technology: "Absorbent Glass Mat (AGM) Sealed Valve-Regulated Lead-Acid (VRLA)",
       voltage: "12V",
       capacityRange: "60 Ah - 105 Ah options",
@@ -42,9 +47,9 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm Gold-ISS / EFB Series",
     tagline: "Enhanced Flooded Battery for Idling Stop System Vehicles",
-    image: "/images/images (33).jfif",
-    specLabelImage: "/images/images (32).jfif",
-    badge: "Gold-ISS / EFB",
+    image: "/images/images (33).webp",
+    specLabelImage: "/images/images (32).webp",
+    badge: "Gold-ISS / EFB (Sourced on Order)",
     highlights: [
       "Optimized for micro-hybrid ISS / Idling Stop vehicle applications",
       "Rapid charge acceptance for efficient energy recovery during driving",
@@ -52,6 +57,7 @@ export const maxtormBatteries = [
       "Reinforced carbon additive plates preventing active material shedding"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Supply Chain",
       technology: "Enhanced Flooded Battery (EFB) with Carbon Additive Tech",
       voltage: "12V",
       modelDesignations: "N-55, N-65, N-70 (B24L), S-95 (D26L), Q-85",
@@ -66,9 +72,9 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm Silver Sealed Maintenance-Free (SMF)",
     tagline: "High-Reliability Automotive & Commercial Starter Battery",
-    image: "/images/images (30).jfif",
-    boxedImage: "/images/images (31).jfif",
-    badge: "Silver SMF",
+    image: "/images/images (30).webp",
+    boxedImage: "/images/images (31).webp",
+    badge: "Silver SMF (Sourced on Order)",
     highlights: [
       "Zero water loss calcium-calcium expanded metal alloy technology",
       "Integrated magic-eye hydrometer for instant state-of-charge verification",
@@ -76,6 +82,7 @@ export const maxtormBatteries = [
       "High-impact polypropylene casing engineered for severe road vibration"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Supply Chain",
       technology: "Sealed Maintenance-Free (SMF) Calcium-Lead Alloy",
       voltage: "12V",
       models: "MF95D26L, S-120L, MF55D23L, MF80D26L, MF105D31L",
@@ -91,8 +98,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo SN 5W-50 Fully Synthetic Engine Oil",
     category: "High-Performance Passenger & Performance Lubricant",
-    image: "/images/images (21).jfif",
-    badge: "API SN • 5W-50",
+    image: "/images/images (21).webp",
+    badge: "API SN • 5W-50 (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
       "100% Fully Synthetic formulation for extreme thermal shear stability",
@@ -101,6 +108,7 @@ export const koryoLubricants = [
       "Engineered for high-output turbocharged and naturally aspirated petrol engines"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "SAE 5W-50",
       serviceCategory: "API SN",
       baseOil: "Group III / IV Synthetic Base Stocks",
@@ -114,8 +122,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo GOLD A3/B4 5W-30 Dual Engine Oil",
     category: "Dual Petrol & Diesel Passenger / Light Commercial Lubricant",
-    image: "/images/images (23).jfif",
-    badge: "API SL • ACEA A3/B4",
+    image: "/images/images (23).webp",
+    badge: "API SL • ACEA A3/B4 (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
       "Universal dual-fuel formulation engineered for both gasoline and light diesel engines",
@@ -124,6 +132,7 @@ export const koryoLubricants = [
       "Exceptional oxidation resistance extending commercial drain intervals"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "SAE 5W-30",
       serviceCategory: "API SL / CF, ACEA A3/B4",
       baseOil: "Premium Hydrocracked Synthetic",
@@ -137,8 +146,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo SP 10W-30 ILSAC GF-6A Synthetic Oil",
     category: "Next-Gen Emission & Timing Chain Protection Lubricant",
-    image: "/images/images (25).jfif",
-    badge: "API SP • ILSAC GF-6A",
+    image: "/images/images (25).webp",
+    badge: "API SP • ILSAC GF-6A (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
       "Formulated to meet latest API SP specifications protecting against Low-Speed Pre-Ignition (LSPI)",
@@ -147,6 +156,7 @@ export const koryoLubricants = [
       "Reduces exhaust catalyst poisoning and supports strict emissions compliance"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "SAE 10W-30",
       serviceCategory: "API SP, ILSAC GF-6A",
       baseOil: "Advanced Synthetic Blend",
@@ -160,8 +170,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo Synthetic Rotary Screw Compressor Oil (20L)",
     category: "Industrial Machinery & Manufacturing Fluid",
-    image: "/images/images (22).jfif",
-    badge: "Industrial Long-Life",
+    image: "/images/images (22).webp",
+    badge: "Industrial Long-Life (Sourcing Portfolio)",
     packSize: "20 Liters (Heavy-Duty Pail)",
     highlights: [
       "Synthetic long-life formulation engineered for stationary rotary screw air compressors",
@@ -170,6 +180,7 @@ export const koryoLubricants = [
       "Extended service life up to 4,000 - 8,000 operational hours"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "ISO VG 32 / 46 / 68 equivalent",
       baseOil: "Synthetic Polyalphaolefin (PAO) / Ester Blend",
       recommendedApplication: "Industrial rotary screw, vane, and centrifugal compressors in manufacturing plants",
@@ -182,8 +193,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo LSD 80W-90 API GL-5 Axle & Gear Oil",
     category: "Heavy-Duty Drivetrain & Differential Lubricant",
-    image: "/images/images (27).jfif",
-    badge: "API GL-5 • LSD",
+    image: "/images/images (27).webp",
+    badge: "API GL-5 • LSD (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
       "Extreme-pressure hypoid gear lubricant formulated with Limited Slip Differential (LSD) friction modifiers",
@@ -192,6 +203,7 @@ export const koryoLubricants = [
       "Excellent seal compatibility preventing oil leaks in heavy commercial axles"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "SAE 80W-90",
       serviceCategory: "API GL-5, Limited Slip (LSD), MIL-L-2105D",
       baseOil: "Heavy-Duty Extreme-Pressure Mineral / Synthetic Blend",
@@ -205,8 +217,8 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo 4T MOTO 10W-40 Scooter & Motorcycle Oil",
     category: "4-Stroke Small Engine Lubricant",
-    image: "/images/images (24).jfif",
-    badge: "API SN • JASO MB",
+    image: "/images/images (24).webp",
+    badge: "API SN • JASO MB (Sourcing Portfolio)",
     packSize: "4 Liters (Ergonomic Jug)",
     highlights: [
       "Specialized low-friction additive chemistry tailored for 4-stroke scooters and automatic motorcycles",
@@ -215,6 +227,7 @@ export const koryoLubricants = [
       "Keeps combustion chambers and pistons clean of carbon buildup"
     ],
     technicalData: {
+      sourcingModel: "Direct Import via Korean Refinery Partnerships",
       viscosityGrade: "SAE 10W-40",
       serviceCategory: "API SN, JASO MB (For automatic scooters and dedicated 4T engines)",
       packaging: "4L Ergonomic Plastic Jug with Measurement Scale",
@@ -232,10 +245,10 @@ export const heavyMachinery = [
     image: "/images/Howo-Tx-Dump-Truck-6x4-1.webp",
     galleryImages: [
       "/images/Howo-Tx-Dump-Truck-6x4-1.webp",
-      "/images/images (15).jfif",
-      "/images/images (16).jfif"
+      "/images/images (15).webp",
+      "/images/images (16).webp"
     ],
-    badge: "6x4 • Heavy Hauler",
+    badge: "6x4 Heavy Hauler (Import on Order)",
     highlights: [
       "Reinforced multi-leaf spring suspension engineered for harsh off-highway quarry roads",
       "High-torque Weichai / MAN technology engine with high power-to-weight ratio",
@@ -243,6 +256,7 @@ export const heavyMachinery = [
       "Ergonomic cabin with air suspension seat and high visibility layout"
     ],
     technicalData: {
+      sourcingModel: "Custom Direct Import & Delivery Staging",
       driveType: "6x4 (Three Axles, Tandem Rear Drive)",
       enginePower: "336 HP - 400 HP options",
       transmission: "10-speed manual with synchromesh and PTO",
@@ -257,14 +271,14 @@ export const heavyMachinery = [
     brand: "SINOTRUK HOWO",
     name: "Howo High-Capacity Concrete Mixer Truck",
     category: "Transit Concrete Batching & Infrastructure Vehicle",
-    image: "/images/images (17).jfif",
+    image: "/images/images (17).webp",
     galleryImages: [
-      "/images/images (17).jfif",
-      "/images/images (18).jfif",
-      "/images/images (19).jfif",
-      "/images/images (20).jfif"
+      "/images/images (17).webp",
+      "/images/images (18).webp",
+      "/images/images (19).webp",
+      "/images/images (20).webp"
     ],
-    badge: "Concrete Mixer • 6x4 / 8x4",
+    badge: "Mixer 6x4 / 8x4 (Import on Order)",
     highlights: [
       "High-capacity wear-resistant spiral blade mixing drum ensuring homogenous batching",
       "High-reliability closed hydraulic pump and motor system with integrated oil cooling",
@@ -272,6 +286,7 @@ export const heavyMachinery = [
       "Robust double-reduction axles capable of navigating muddy construction sites"
     ],
     technicalData: {
+      sourcingModel: "Custom Direct Import & Delivery Staging",
       driveConfiguration: "6x4 or 8x4 Heavy-Duty Chassis",
       mixingDrumCapacity: "9 m³ - 12 m³ geometric capacity",
       drumMaterial: "High-Strength Alloy Wear-Resistant Steel Plates",
