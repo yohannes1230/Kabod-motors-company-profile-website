@@ -45,75 +45,72 @@
   justify-content: space-between;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  color: var(--color-text);
-}
-
-.brand-logo-icon {
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, #101E30 0%, #07111F 100%);
-  border: 1.5px solid var(--color-primary-border);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 1.25rem;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.brand-logo-icon::after {
-  content: '';
+/* Skip to Content for Accessibility */
+.skip-to-content {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 8px;
-  height: 8px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--color-accent);
-}
-
-[data-theme="light"] .brand-logo-icon {
-  background: linear-gradient(135deg, #0866FF 0%, #0052D6 100%);
-  border-color: rgba(8, 102, 255, 0.3);
+  top: -999px;
+  left: 1rem;
+  background: var(--color-primary);
   color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(8, 102, 255, 0.25);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  transition: top var(--transition-fast);
 }
 
-.brand-logo-text {
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: opacity var(--transition-fast);
+}
+
+.brand-logo:hover {
+  opacity: 0.92;
+}
+
+.brand-wordmark {
   display: flex;
   flex-direction: column;
 }
 
-.brand-logo-text span.brand-title {
-  line-height: 1.1;
-  font-size: 1.2rem;
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.28rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
 }
 
-.brand-logo-text span.brand-tagline {
-  font-size: 0.65rem;
+.brand-title-accent {
   color: var(--color-accent);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
-[data-theme="light"] .brand-logo-text span.brand-tagline {
+[data-theme="light"] .brand-title-accent {
   color: var(--color-primary);
+}
+
+.brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+  margin-top: 2px;
 }
 
 .nav-desktop {
@@ -1414,6 +1411,75 @@
 textarea.form-control {
   min-height: 110px;
   resize: vertical;
+}
+
+/* Form Feedback Alerts */
+.form-alert {
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  margin-top: 1.25rem;
+  border: 1px solid transparent;
+}
+
+.form-alert-error {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #F87171;
+}
+
+[data-theme="light"] .form-alert-error {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #DC2626;
+}
+
+.form-alert-success {
+  background: var(--color-success-soft);
+  border-color: var(--color-success-border);
+  color: var(--color-success);
+}
+
+.form-alert-success h5 {
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.form-alert-success p {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-alert-success p:last-child {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.form-alert-warning {
+  background: var(--color-warning-soft);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning);
+}
+
+.form-alert-warning h5 {
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.form-alert-warning p {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-alert-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .contact-info-cards {

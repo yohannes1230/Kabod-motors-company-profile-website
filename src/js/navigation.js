@@ -44,11 +44,33 @@ export function initNavigation() {
   mobileMenuBtn?.addEventListener('click', () => toggleDrawer());
   drawerBackdrop?.addEventListener('click', () => toggleDrawer(false));
 
-  // Escape key closes mobile drawer
+  // Escape key closes mobile drawer & Tab focus trap
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
+    if (!mobileDrawer?.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
       toggleDrawer(false);
       mobileMenuBtn?.focus();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableEls = mobileDrawer.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      if (focusableEls.length === 0) return;
+      const firstEl = focusableEls[0];
+      const lastEl = focusableEls[focusableEls.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
     }
   });
 

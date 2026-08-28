@@ -88,7 +88,7 @@ export function initInquiryForm() {
     if (!fullName || !phone || !email || !message) {
       if (formFeedback) {
         formFeedback.innerHTML = `
-          <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #FCA5A5; padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-top: 1rem;">
+          <div class="form-alert form-alert-error" role="alert">
             Please complete all required fields (Full Name, Phone, Email, and Message).
           </div>
         `;
@@ -101,7 +101,7 @@ export function initInquiryForm() {
     if (!emailPattern.test(email)) {
       if (formFeedback) {
         formFeedback.innerHTML = `
-          <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #FCA5A5; padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-top: 1rem;">
+          <div class="form-alert form-alert-error" role="alert">
             Please enter a valid email address.
           </div>
         `;
@@ -145,6 +145,10 @@ export function initInquiryForm() {
     }
 
     try {
+      if (!FORM_ENDPOINT) {
+        throw new Error('No custom form endpoint configured in environment.');
+      }
+
       const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: {
@@ -162,12 +166,12 @@ export function initInquiryForm() {
           const safeTarget = escapeHTML(contactMethod === 'Email' ? email : phone);
 
           formFeedback.innerHTML = `
-            <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6EE7B7; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; margin-top: 1.25rem;">
-              <h5 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.05rem;">Thank you. Your inquiry has been sent to Kabod Motors.</h5>
-              <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: var(--color-text-secondary);">
+            <div class="form-alert form-alert-success" role="status">
+              <h5>Thank you. Your inquiry has been sent to Kabod Motors.</h5>
+              <p>
                 Dear <strong>${safeName}</strong>, your request regarding <strong>${safeInterest}</strong> has been received by our commercial team.
               </p>
-              <p style="margin: 0; font-size: 0.8rem; color: var(--color-text-muted);">
+              <p>
                 A representative will contact you via <strong>${safeContact}</strong> at <code>${safeTarget}</code> within 24 business hours.
               </p>
             </div>
@@ -178,22 +182,21 @@ export function initInquiryForm() {
         throw new Error('Endpoint submission returned status ' + response.status);
       }
     } catch (err) {
-      console.warn('Online submission fallback engaged:', err);
       if (formFeedback) {
         formFeedback.innerHTML = `
-          <div style="background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); color: #FCD34D; padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.875rem; margin-top: 1.25rem;">
-            <h5 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1rem;">Direct Dispatch Options Available</h5>
-            <p style="margin: 0 0 0.75rem 0; font-size: 0.85rem; color: var(--color-text-secondary);">
-              If online transmission encounters connection delays, send your request directly via Email or WhatsApp for immediate response:
+          <div class="form-alert form-alert-warning" role="region" aria-label="Direct Dispatch Options">
+            <h5>Direct Dispatch Options Available</h5>
+            <p>
+              Send your request directly to our commercial team via verified Email or WhatsApp for immediate processing:
             </p>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-              <a href="${mailtoUrl}" class="btn btn-primary btn-sm" style="text-decoration: none; font-size: 0.8rem; padding: 0.45rem 0.95rem;">
+            <div class="form-alert-actions">
+              <a href="${mailtoUrl}" class="btn btn-primary btn-sm">
                 ✉️ Send via Email (${OFFICIAL_EMAIL})
               </a>
-              <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="text-decoration: none; font-size: 0.8rem; padding: 0.45rem 0.95rem;">
+              <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
                 💬 Send via WhatsApp
               </a>
-              <a href="tel:${OFFICIAL_PHONE_RAW}" class="btn btn-outline btn-sm" style="text-decoration: none; font-size: 0.8rem; padding: 0.45rem 0.95rem;">
+              <a href="tel:${OFFICIAL_PHONE_RAW}" class="btn btn-outline btn-sm">
                 📞 Call +251-911235960
               </a>
             </div>
