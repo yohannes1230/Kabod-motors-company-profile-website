@@ -91,3 +91,14 @@ The site content is partitioned into two distinct verification tiers to eliminat
 - **Tab State Synchronization**: `#products?tab=energy`, `#products?tab=lubricants`, `#products?tab=machinery` deep-links directly activate the respective catalog views.
 - **Modal Deep-Linking**: `#products?modal=yangwang-u8` opens the full technical specification drawer automatically.
 - **Accessibility (WCAG 2.2 AA)**: Focus restoration, ARIA dialog roles, ARIA tab roles, keyboard navigation (Escape to close, Left/Right arrow keys in lightbox), min 44px touch targets.
+
+---
+
+## 7. Release Freeze & Production Sign-Off
+- **Build Status**: Verified PASS (`vite build` in 503ms, zero warnings/errors).
+- **Asset Integrity**: 40/40 WebP assets verified, 0 broken images, 37 source `.jfif` files archived.
+- **Anchor Integrity**: 43/43 internal anchors and modal links verified with 0 dead links.
+- **Lead Delivery**: Configurable through `VITE_FORM_ENDPOINT` with graceful fallbacks (Email, WhatsApp, Phone).
+- **Brand Wordmark**: Professional typographic corporate treatment with modular replacement readiness.
+- **Production Status**: RELEASE CANDIDATE FREEZE.
+
