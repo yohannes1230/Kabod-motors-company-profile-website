@@ -57,12 +57,11 @@ export function populateInquiry({ interest, productName, category, details } = {
 
 export function initInquiryForm() {
   const form = document.getElementById('kabod-inquiry-form');
-  const formFeedback = document.getElementById('form-feedback-message');
-  const submitBtn = form?.querySelector('button[type="submit"]');
-
   if (!form) return;
+  const formFeedback = document.getElementById('form-feedback-message');
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-  const FORM_ENDPOINT = import.meta.env?.VITE_FORM_ENDPOINT || 'https://formspree.io/f/xvzgpqab';
+  const FORM_ENDPOINT = import.meta.env?.VITE_FORM_ENDPOINT || '';
   const OFFICIAL_EMAIL = 'Kabodtrading094@gmail.com';
   const OFFICIAL_PHONE_RAW = '+251911235960';
 
