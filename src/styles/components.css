@@ -78,7 +78,7 @@
   opacity: 0.92;
 }
 
-.brand-logo img {
+.brand-svg {
   display: block;
   width: 215px;
   max-width: 100%;
@@ -87,9 +87,16 @@
 }
 
 @media (max-width: 639px) {
-  .brand-logo img {
+  .brand-svg {
     width: 175px;
   }
+}
+
+.brand-svg-definitions {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .nav-desktop {

@@ -26,6 +26,10 @@
   --color-primary-soft: rgba(22, 119, 255, 0.12);
   --color-primary-border: rgba(22, 119, 255, 0.32);
 
+  /* Official Kabod Motors logo colors */
+  --color-logo-blue: #2563EB;
+  --color-logo-red: #DC2626;
+
   /* Electric Accent (Cyan) */
   --color-accent: #19B5FE;
   --color-accent-soft: rgba(25, 181, 254, 0.12);
@@ -109,6 +113,9 @@
   --color-primary-hover: #0052D6;
   --color-primary-soft: rgba(8, 102, 255, 0.08);
   --color-primary-border: rgba(8, 102, 255, 0.25);
+
+  --color-logo-blue: #2563EB;
+  --color-logo-red: #DC2626;
 
   --color-accent: #0798D8;
   --color-accent-soft: rgba(7, 152, 216, 0.1);
