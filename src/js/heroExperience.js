@@ -1,6 +1,6 @@
 /**
  * KABOD MOTORS HERO STORY
- * A simple, deterministic synchronized rotator. Text and image always change together.
+ * Text and image rotate together from one shared hero scope.
  */
 export function initHeroExperience() {
   const hero = document.querySelector('[data-hero-story]');
@@ -49,127 +49,96 @@ export function initHeroExperience() {
     }
   ];
 
-  const get = selector => hero.querySelector(selector);
-  const kicker = get('[data-story-kicker]');
-  const title = get('[data-story-title]');
-  const copy = get('[data-story-copy]');
-  const image = get('[data-story-image]');
-  const imageTitle = get('[data-story-image-title]');
-  const imageSubtitle = get('[data-story-image-subtitle]');
-  const badge = get('[data-story-badge]');
-  const current = get('[data-story-current]');
+  const $ = selector => hero.querySelector(selector);
+  const elements = {
+    kicker: $('[data-story-kicker]'),
+    title: $('[data-story-title]'),
+    copy: $('[data-story-copy]'),
+    image: $('[data-story-image]'),
+    imageTitle: $('[data-story-image-title]'),
+    imageSubtitle: $('[data-story-image-subtitle]'),
+    badge: $('[data-story-badge]'),
+    current: $('[data-story-current]')
+  };
   const dots = [...hero.querySelectorAll('[data-story-index]')];
 
-  if (![kicker, title, copy, image, imageTitle, imageSubtitle, badge, current].every(Boolean)) {
-    console.error('Hero markup is incomplete.');
+  if (Object.values(elements).some(el => !el)) {
+    console.error('Kabod hero: required story elements were not found.');
     return;
   }
 
   let index = 0;
-  let timer = null;
-  let isChanging = false;
-  let failedStories = new Set();
+  let timerId;
+  let changing = false;
 
-  // Preload every available image. Missing assets are remembered instead of freezing the hero.
-  stories.forEach((story, storyIndex) => {
-    const preload = new Image();
-    preload.onload = () => { failedStories.delete(storyIndex); };
-    preload.onerror = () => {
-      failedStories.add(storyIndex);
-      console.warn(`Hero image unavailable: ${story.image}`);
-    };
-    preload.src = story.image;
-  });
-
-  function paint(story, storyIndex) {
-    kicker.textContent = story.kicker;
-    title.textContent = story.title;
-    copy.textContent = story.copy;
-    image.src = story.image;
-    image.alt = story.alt;
-    imageTitle.textContent = story.imageTitle;
-    imageSubtitle.textContent = story.imageSubtitle;
-    badge.textContent = story.badge;
-    current.textContent = String(storyIndex + 1).padStart(2, '0');
-
-    dots.forEach((dot, i) => {
-      const active = i === storyIndex;
-      dot.classList.toggle('is-active', active);
-      dot.setAttribute('aria-current', active ? 'true' : 'false');
-    });
-  }
-
-  function nextAvailable(startIndex) {
-    for (let step = 1; step <= stories.length; step += 1) {
-      const candidate = (startIndex + step) % stories.length;
-      if (!failedStories.has(candidate)) return candidate;
-    }
-    return startIndex;
-  }
-
-  function setActive(nextIndex, immediate = false) {
-    if (isChanging && !immediate) return;
+  function render(nextIndex, animate = true) {
+    if (changing || nextIndex === index && animate) return;
+    changing = true;
     const story = stories[nextIndex];
-    if (!story) return;
-
-    // If the image was confirmed missing, do not leave the UI blurred or stuck.
-    if (failedStories.has(nextIndex)) {
-      setActive(nextAvailable(nextIndex), true);
-      return;
-    }
-
-    isChanging = true;
-    hero.classList.add('hero-story-changing');
 
     const apply = () => {
+      elements.kicker.textContent = story.kicker;
+      elements.title.textContent = story.title;
+      elements.copy.textContent = story.copy;
+      elements.imageTitle.textContent = story.imageTitle;
+      elements.imageSubtitle.textContent = story.imageSubtitle;
+      elements.badge.textContent = story.badge;
+      elements.current.textContent = String(nextIndex + 1).padStart(2, '0');
+
+      elements.image.onload = () => {
+        elements.image.classList.remove('is-loading');
+      };
+      elements.image.onerror = () => {
+        console.error('Kabod hero image failed to load:', story.image);
+        elements.image.classList.remove('is-loading');
+      };
+      elements.image.classList.add('is-loading');
+      elements.image.src = story.image;
+      elements.image.alt = story.alt;
+
+      dots.forEach((dot, i) => {
+        const active = i === nextIndex;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+
       index = nextIndex;
-      paint(story, index);
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          hero.classList.remove('hero-story-changing');
-          isChanging = false;
-        });
+        hero.classList.remove('hero-story-changing');
+        window.setTimeout(() => { changing = false; }, 180);
       });
     };
 
-    if (immediate) {
+    if (!animate) {
       apply();
-    } else {
-      window.setTimeout(apply, 220);
+      changing = false;
+      return;
     }
+
+    hero.classList.add('hero-story-changing');
+    window.setTimeout(apply, 180);
   }
 
   function advance() {
-    setActive(nextAvailable(index));
+    render((index + 1) % stories.length);
   }
 
-  function start() {
-    stop();
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    timer = window.setInterval(advance, 4000);
-  }
-
-  function stop() {
-    if (timer) window.clearInterval(timer);
-    timer = null;
+  function restartTimer() {
+    window.clearInterval(timerId);
+    timerId = window.setInterval(advance, 4000);
   }
 
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const target = Number(dot.dataset.storyIndex);
-      if (Number.isInteger(target) && target >= 0 && target < stories.length) {
-        setActive(target);
-        start();
+      if (Number.isInteger(target) && target >= 0 && target < stories.length && target !== index) {
+        render(target);
+        restartTimer();
       }
     });
   });
 
-  // Do not pause the slideshow on mouse hover: visitors often keep the cursor over the hero.
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop();
-    else start();
-  });
-
-  setActive(0, true);
-  start();
+  // Initial state is already visible; begin automatic synchronized rotation.
+  index = 0;
+  restartTimer();
 }
