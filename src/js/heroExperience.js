@@ -146,7 +146,7 @@ export function initHeroExperience() {
   function start() {
     stop();
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    timer = window.setInterval(advance, 5200);
+    timer = window.setInterval(advance, 4000);
   }
 
   function stop() {
