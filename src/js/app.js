@@ -4,7 +4,7 @@
  */
 
 import { initTheme } from './theme.js';
-import { initMotion } from './motion.js';
+import { initMotion } from './motion.js';\nimport { initHeroRotator } from './heroRotator.js';
 import { initNavigation } from './navigation.js';
 import { initVehiclesShowcase } from './vehiclesShowcase.js';
 import { initProductShowcase } from './productShowcase.js';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSourcingMap();
   initGalleryLightbox();
   initInquiryForm();
-  initMotion();
+  initMotion();\n  initHeroRotator();
 
   // Handle Solutions Cards Inquiries
   document.querySelectorAll('.solution-inquire-btn').forEach(btn => {
