@@ -209,7 +209,7 @@
   <section class="hero-section" id="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-content">
+        <div class="hero-content" data-hero-story>
           <div class="hero-trust-tag animate-hero-tag">
             <span class="dot"></span>
             <span>Established 2016 • Addis Ababa, Ethiopia</span>
@@ -217,86 +217,53 @@
 
           <div class="hero-eyebrow animate-hero-title" aria-hidden="true">
             <span class="hero-eyebrow-line"></span>
-            <span>Mobility • Energy • Industry</span>
+            <span>Built around the way Ethiopia moves</span>
           </div>
 
           <h1 class="hero-title animate-hero-title">
-            <span class="hero-title-static">Automotive &amp; Industrial Solutions.</span>
-            <span class="hero-statement">
-              <span class="hero-rotator" data-hero-rotator aria-live="polite">Powering Mobility.</span>
+            <span class="hero-title-static">Moving Ethiopia Forward.</span>
+            <span class="hero-story">
+              <span class="hero-story-title" data-story-title>Tomorrow’s Drive, Today.</span>
             </span>
           </h1>
 
-          <p class="hero-description animate-hero-desc">
-            Kabod Motors connects Ethiopia with dependable automotive, energy and industrial solutions through trusted international sourcing and a quality-focused approach to business.
+          <div class="hero-story-kicker animate-hero-desc" data-story-kicker>Electric Mobility</div>
+
+          <p class="hero-description hero-story-copy animate-hero-desc" data-story-copy>
+            Discover intelligent electric mobility that brings innovation, comfort and a new driving experience closer to Ethiopia.
           </p>
 
-          <div class="hero-capabilities" aria-label="Kabod Motors capabilities">
-            <div class="hero-capability">
-              <span class="hero-capability-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </span>
-              Electric Mobility
-            </div>
-            <div class="hero-capability">
-              <span class="hero-capability-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 6h6M9 18h6"/></svg>
-              </span>
-              Energy Solutions
-            </div>
-            <div class="hero-capability">
-              <span class="hero-capability-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17h18M5 17V9l4-4h7l3 4v8M7 17a2 2 0 1 0 4 0M14 17a2 2 0 1 0 4 0"/></svg>
-              </span>
-              Heavy Machinery
-            </div>
-            <div class="hero-capability">
-              <span class="hero-capability-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-              </span>
-              Global Sourcing
-            </div>
+          <div class="hero-story-nav" aria-label="Explore Kabod Motors solutions">
+            <button class="hero-story-dot is-active" type="button" data-story-index="0" aria-current="true">Mobility</button>
+            <button class="hero-story-dot" type="button" data-story-index="1" aria-current="false">Energy</button>
+            <button class="hero-story-dot" type="button" data-story-index="2" aria-current="false">Lubricants</button>
+            <button class="hero-story-dot" type="button" data-story-index="3" aria-current="false">Heavy Industry</button>
           </div>
 
           <div class="hero-ctas animate-hero-ctas">
-            <a href="#contact" class="btn btn-primary">
-              Request a Quote
-            </a>
-            <a href="#solutions" class="btn btn-secondary">
-              Explore Our Solutions
-            </a>
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            <a href="#solutions" class="btn btn-secondary">Explore Our Solutions</a>
           </div>
 
           <div class="hero-pillars-strip animate-hero-pillars">
-            <div class="hero-pillar-item">
-              <span class="hero-pillar-label">Founded</span>
-              <span class="hero-pillar-val">2016</span>
-            </div>
-            <div class="hero-pillar-item">
-              <span class="hero-pillar-label">Portfolio</span>
-              <span class="hero-pillar-val">Multi-Sector</span>
-            </div>
-            <div class="hero-pillar-item">
-              <span class="hero-pillar-label">Sourcing</span>
-              <span class="hero-pillar-val">Korea • China • UAE</span>
-            </div>
-            <div class="hero-pillar-item">
-              <span class="hero-pillar-label">Headquarters</span>
-              <span class="hero-pillar-val">Addis Ababa</span>
-            </div>
+            <div class="hero-pillar-item"><span class="hero-pillar-label">Founded</span><span class="hero-pillar-val">2016</span></div>
+            <div class="hero-pillar-item"><span class="hero-pillar-label">Portfolio</span><span class="hero-pillar-val">Multi-Sector</span></div>
+            <div class="hero-pillar-item"><span class="hero-pillar-label">Sourcing</span><span class="hero-pillar-val">Korea • China • UAE</span></div>
+            <div class="hero-pillar-item"><span class="hero-pillar-label">Headquarters</span><span class="hero-pillar-val">Addis Ababa</span></div>
           </div>
         </div>
 
         <div class="hero-media-wrapper animate-hero-media">
           <div class="hero-image-card">
-            <img src="/images/GettyImages-2043061619-e1710106398958.webp" alt="BYD Yangwang U8 Luxury Electric Vehicle"
+            <div class="hero-story-count"><strong data-story-current>01</strong><span>/ 04</span></div>
+            <img data-story-image src="/images/GettyImages-2043061619-e1710106398958.webp" alt="BYD Yangwang U8 electric luxury SUV"
               width="1440" height="958" fetchpriority="high">
             <div class="hero-image-caption">
               <div class="hero-image-info">
-                <h4>BYD Yangwang U8</h4>
-                <p>e⁴ Quad-Motor Intelligent Flagship EV</p>
+                <h4 data-story-image-title>BYD Yangwang U8</h4>
+                <p data-story-image-subtitle>Intelligent flagship electric mobility</p>
               </div>
-              <span class="badge badge-cyan">Electric Mobility</span>
+              <span class="badge badge-cyan" data-story-badge>Electric Mobility</span>
             </div>
           </div>
         </div>
