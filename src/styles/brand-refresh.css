@@ -1,0 +1,18 @@
+/* Official Kabod Motors brand refresh */
+.brand-logo-img{display:block;width:230px;height:auto;max-width:100%;transition:transform .25s ease,filter .25s ease}
+.brand-logo:hover .brand-logo-img{transform:translateY(-1px)}
+[data-theme="dark"] .brand-logo-img{filter:drop-shadow(0 4px 12px rgba(0,0,0,.18))}
+@media(max-width:639px){.brand-logo-img{width:180px}}
+
+.hero-dynamic-line{display:block;min-height:1.2em;color:var(--color-text)}
+.hero-rotating-word{position:relative;display:inline-block;color:#E44A6B;white-space:nowrap}
+.hero-rotating-word::after{content:"";display:inline-block;width:3px;height:.9em;background:var(--color-primary);margin-left:.08em;vertical-align:-.08em;animation:kabodCursor .8s steps(1) infinite}
+.hero-dynamic-subtitle{max-width:680px}
+.hero-proof-row{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;margin:1.4rem 0 2rem;font-size:.86rem;color:var(--color-text-secondary)}
+.hero-proof-item{display:inline-flex;align-items:center;gap:.45rem}
+.hero-proof-item svg{color:#E44A6B;flex:none}
+.hero-image-card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(7,17,31,.38),transparent 48%);pointer-events:none}
+.hero-image-caption{z-index:2}
+.hero-image-card{isolation:isolate}
+@keyframes kabodCursor{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero-rotating-word::after{animation:none}.brand-logo-img{transition:none}}
