@@ -1,6 +1,6 @@
 /**
  * MAIN APP ENTRY POINT
- * Coordinates all modules, navigation, showcases, theme, motion, solutions pre-fills, and interactive UI
+ * Each feature is isolated so one non-critical module cannot stop the homepage.
  */
 
 import { initTheme } from './theme.js';
@@ -14,15 +14,23 @@ import { initGalleryLightbox } from './galleryLightbox.js';
 import { initInquiryForm, populateInquiry } from './inquiryForm.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  initNavigation();
-  initVehiclesShowcase();
-  initProductShowcase();
-  initSourcingMap();
-  initGalleryLightbox();
-  initInquiryForm();
-  initMotion();
-  initHeroExperience();
+  // The hero is the first impression: initialise it first and independently.
+  try { initHeroExperience(); } catch (error) { console.error('Hero experience failed to initialise:', error); }
+
+  const initialisers = [
+    ['theme', initTheme],
+    ['navigation', initNavigation],
+    ['vehicles', initVehiclesShowcase],
+    ['products', initProductShowcase],
+    ['sourcing', initSourcingMap],
+    ['gallery', initGalleryLightbox],
+    ['inquiry form', initInquiryForm],
+    ['motion', initMotion]
+  ];
+
+  initialisers.forEach(([name, init]) => {
+    try { init(); } catch (error) { console.error(`${name} failed to initialise:`, error); }
+  });
 
   document.querySelectorAll('.solution-inquire-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
