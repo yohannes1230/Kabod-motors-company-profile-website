@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 310" role="img" aria-labelledby="title desc">
+<title id="title">Kabod Motors official logo</title><desc id="desc">Kabod Motors blue and red corporate wordmark</desc>
+<defs>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#294F8D"/><stop offset="1" stop-color="#173B76"/></linearGradient>
+ <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B51F4A"/><stop offset="1" stop-color="#E44A6B"/></linearGradient>
+</defs>
+<g fill="url(#blue)" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="245">
+ <text x="20" y="235" letter-spacing="-14">Kab</text><text x="900" y="235" letter-spacing="-14">d</text>
+</g>
+<g transform="translate(730 155)">
+ <path fill="url(#blue)" d="M0-112C-62-112-112-62-112 0s50 112 112 112c35 0 66-16 87-41L35 46C23 61 12 70 0 70c-39 0-70-31-70-70s31-70 70-70c14 0 28 4 40 13L83-94C61-106 32-112 0-112Z"/>
+ <path fill="url(#red)" d="M-15-128C48-118 96-69 101-7l42 29-55 19C71 101 15 136-49 126l-8-42C-15 93 25 76 42 41c23-48 7-105-38-132Z"/>
+ <path fill="#fff" d="M-14-96C32-88 65-50 67-5L28-22C14-54-12-70-42-69l8-27C-28-97-21-97-14-96Z"/>
+ <path fill="#fff" d="M-57 94C-13 103 30 82 49 43l27 13C54 102 5 126-44 116Z"/>
+</g>
+<text x="1085" y="158" fill="#C42D56" font-family="Arial,Helvetica,sans-serif" font-size="104" font-weight="400" letter-spacing="8">MOTORS</text>
+<path d="M1085 205H1560" stroke="#69717D" stroke-width="5"/>
+</svg>
