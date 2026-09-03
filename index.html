@@ -456,51 +456,122 @@
         </div>
       </div>
 
-      <!-- Corporate Governance & Organization Chart -->
-      <div class="org-chart-wrapper reveal-on-scroll">
-        <div class="org-chart-title">
-          <span class="badge badge-blue" style="margin-bottom: 0.5rem;">Governance Structure</span>
-          <h3>Company Organizational Framework</h3>
-          <p style="font-size: 0.85rem; color: var(--color-text-muted);">As documented in the official Kabod Motors
-            corporate profile.</p>
+      <!-- Corporate Governance & Organization Framework -->
+      <div class="governance-showcase reveal-on-scroll" aria-label="Kabod Motors organizational framework">
+        <div class="governance-heading">
+          <div>
+            <span class="governance-kicker"><span class="governance-kicker-dot"></span>Governance Structure</span>
+            <h3>Leadership with a clear line of accountability.</h3>
+          </div>
+          <p>As documented in the official Kabod Motors corporate profile, the framework connects strategic leadership, specialist oversight and operational directorates.</p>
         </div>
 
-        <div class="org-chart-nodes">
-          <div class="org-node exec">
-            Managing Director
-          </div>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
-            <div class="org-node" style="width: auto; font-size: 0.85rem;">Auditor</div>
-            <div class="org-node" style="width: auto; font-size: 0.85rem;">Legal Advisor</div>
-            <div class="org-node" style="width: auto; font-size: 0.85rem;">Executive Admin Assistant</div>
-          </div>
-          <div class="org-node" style="border-color: var(--color-primary-border);">
-            General Manager
+        <div class="governance-flow">
+          <div class="governance-stage governance-stage-leadership">
+            <div class="governance-node governance-node-primary">
+              <div class="governance-node-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z"/>
+                  <path d="M9 12h6M12 9v6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="governance-role-label">Strategic Leadership</span>
+                <h4>Managing Director</h4>
+              </div>
+              <span class="governance-status">Executive</span>
+            </div>
           </div>
 
-          <div class="org-directorates-grid">
-            <div class="org-dir-card">
-              <h5>Business Directorate</h5>
-              <ul>
-                <li>• Import &amp; Distribution Management</li>
-                <li>• Sourcing &amp; Procurement Logistics</li>
-              </ul>
-            </div>
-            <div class="org-dir-card">
-              <h5>Commercial &amp; Marketing</h5>
-              <ul>
-                <li>• Corporate Sales &amp; Fleet Accounts</li>
-                <li>• Market Expansion &amp; Client Service</li>
-              </ul>
-            </div>
-            <div class="org-dir-card">
-              <h5>Finance, Admin &amp; HCM</h5>
-              <ul>
-                <li>• Financial Governance &amp; Auditing</li>
-                <li>• Human Capital &amp; Compliance</li>
-              </ul>
+          <div class="governance-connector governance-connector-down" aria-hidden="true"><span></span></div>
+
+          <div class="governance-advisory">
+            <article class="governance-advisory-card">
+              <div class="governance-mini-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M6 18V6l6-3 6 3v12M9 8h6M9 12h6"/></svg>
+              </div>
+              <div><span>Independent Oversight</span><strong>Auditor</strong></div>
+            </article>
+            <article class="governance-advisory-card">
+              <div class="governance-mini-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 7v5c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V7l-8-4Z"/><path d="M9 12h6"/></svg>
+              </div>
+              <div><span>Corporate Counsel</span><strong>Legal Advisor</strong></div>
+            </article>
+            <article class="governance-advisory-card">
+              <div class="governance-mini-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+              </div>
+              <div><span>Executive Support</span><strong>Executive Admin Assistant</strong></div>
+            </article>
+          </div>
+
+          <div class="governance-connector governance-connector-down governance-connector-short" aria-hidden="true"><span></span></div>
+
+          <div class="governance-stage">
+            <div class="governance-node governance-node-manager">
+              <div class="governance-node-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2M3 12h18"/></svg>
+              </div>
+              <div>
+                <span class="governance-role-label">Operational Leadership</span>
+                <h4>General Manager</h4>
+              </div>
+              <span class="governance-status governance-status-muted">Management</span>
             </div>
           </div>
+
+          <div class="governance-connector governance-connector-down governance-connector-branch" aria-hidden="true"><span></span></div>
+
+          <div class="governance-directorates">
+            <article class="governance-directorate-card">
+              <div class="governance-directorate-top">
+                <span class="governance-index">01</span>
+                <div class="governance-directorate-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V7l8-4 8 4v12"/><path d="M3 19h18M8 11h8M8 15h5"/></svg>
+                </div>
+              </div>
+              <h5>Business Directorate</h5>
+              <ul>
+                <li>Import &amp; Distribution Management</li>
+                <li>Sourcing &amp; Procurement Logistics</li>
+              </ul>
+            </article>
+
+            <article class="governance-directorate-card governance-directorate-featured">
+              <div class="governance-directorate-top">
+                <span class="governance-index">02</span>
+                <div class="governance-directorate-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9l8-5 8 5v10"/><path d="M8 19v-5h8v5M3 19h18"/></svg>
+                </div>
+              </div>
+              <h5>Commercial &amp; Marketing</h5>
+              <ul>
+                <li>Corporate Sales &amp; Fleet Accounts</li>
+                <li>Market Expansion &amp; Client Service</li>
+              </ul>
+            </article>
+
+            <article class="governance-directorate-card">
+              <div class="governance-directorate-top">
+                <span class="governance-index">03</span>
+                <div class="governance-directorate-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V8h12v11M9 8V5h6v3M9 12h2M13 12h2M9 15h2M13 15h2"/></svg>
+                </div>
+              </div>
+              <h5>Finance, Admin &amp; HCM</h5>
+              <ul>
+                <li>Financial Governance &amp; Auditing</li>
+                <li>Human Capital &amp; Compliance</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="governance-footer-note">
+          <span class="governance-footer-line"></span>
+          <p>One leadership system. Three connected operational pillars.</p>
+          <span class="governance-footer-line"></span>
         </div>
       </div>
     </div>
