@@ -232,3 +232,18 @@
 .hero-story-changing .hero-image-card img{
   filter:none !important;
 }
+
+
+/* Hero transition reliability: the same state controls both columns. */
+.hero-story-changing .hero-image-card img{
+  opacity:.35;
+  transform:scale(1.015);
+  filter:none !important;
+}
+.hero-story-changing .hero-image-info{
+  opacity:0;
+  transform:translateY(8px);
+}
+.hero-image-card img{
+  filter:none !important;
+}
