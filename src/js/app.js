@@ -4,7 +4,8 @@
  */
 
 import { initTheme } from './theme.js';
-import { initMotion } from './motion.js';\nimport { initHeroExperience } from './heroExperience.js';
+import { initMotion } from './motion.js';
+import { initHeroExperience } from './heroExperience.js';
 import { initNavigation } from './navigation.js';
 import { initVehiclesShowcase } from './vehiclesShowcase.js';
 import { initProductShowcase } from './productShowcase.js';
@@ -20,22 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initSourcingMap();
   initGalleryLightbox();
   initInquiryForm();
-  initMotion();\n  initHeroExperience();
+  initMotion();
+  initHeroExperience();
 
-  // Handle Solutions Cards Inquiries
   document.querySelectorAll('.solution-inquire-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const interest = btn.getAttribute('data-interest') || 'General Inquiry';
       const pillarTitle = btn.getAttribute('data-title') || interest;
       populateInquiry({
-        interest: interest,
+        interest,
         details: `Inquiring about ${pillarTitle} solutions for our organization.`
       });
     });
   });
 
-  // Handle B2B direct inquiry triggers
   document.querySelectorAll('.b2b-inquire-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle Company Profile PDF / Overview Download
   document.querySelectorAll('.download-profile-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
