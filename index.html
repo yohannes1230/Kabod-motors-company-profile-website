@@ -52,7 +52,7 @@
   <link rel="stylesheet" href="/src/styles/tokens.css">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/components.css">
-  <link rel="stylesheet" href="/src/styles/animations.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">\n  <link rel="stylesheet" href="/src/styles/brand-refresh.css">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -82,28 +82,6 @@
 </head>
 
 <body>
-  <svg class="brand-svg-definitions" aria-hidden="true" focusable="false">
-    <defs>
-    </defs>
-    <symbol id="kabod-motors-wordmark" viewBox="0 0 1200 200">
-      <g fill="var(--color-logo-blue)" font-family="Georgia, 'Times New Roman', serif" font-style="italic"
-        font-weight="700">
-        <text x="18" y="158" font-size="168" letter-spacing="-7">Kab</text>
-        <text x="687" y="158" font-size="168" letter-spacing="-7">d</text>
-      </g>
-      <g>
-        <circle cx="580" cy="91" r="70" fill="var(--color-logo-blue)" />
-        <path d="M580 21a70 70 0 0 1 61 35l-22 6 37 28 13-45-22 7a80 80 0 0 0-67-40z" fill="var(--color-logo-red)" />
-        <path d="M580 161a70 70 0 0 1-61-35l22-6-37-28-13 45 22-7a80 80 0 0 0 67 40z" fill="var(--color-logo-red)" />
-        <path d="M580 42a49 49 0 0 1 43 25l-18 5 29 22 10-36-18 6a60 60 0 0 0-46-31z" fill="#FFFFFF" />
-        <path d="M580 140a49 49 0 0 1-43-25l18-5-29-22-10 36 18-6a60 60 0 0 0 46 31z" fill="#FFFFFF" />
-      </g>
-      <text x="790" y="130" fill="var(--color-logo-red)" font-family="Georgia, 'Times New Roman', serif" font-size="78"
-        font-weight="400" letter-spacing="4">MOTORS</text>
-      <path d="M788 163h390" fill="none" stroke="var(--color-logo-underline)" stroke-width="5" />
-    </symbol>
-  </svg>
-
   <!-- Skip to Content for Accessibility -->
   <a href="#hero" class="skip-to-content">Skip to main content</a>
 
@@ -113,9 +91,7 @@
   <header class="site-header" id="site-header">
     <div class="container nav-container">
       <a href="#hero" class="brand-logo" aria-label="Kabod Motors home">
-        <svg class="brand-svg" viewBox="0 0 1200 200" role="img" aria-label="Kabod Motors" focusable="false">
-          <use href="#kabod-motors-wordmark" />
-        </svg>
+        <img class="brand-logo-img" src="/images/kabod-motors-official.svg" alt="Kabod Motors" width="1600" height="310">
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -216,14 +192,18 @@
           </div>
 
           <h1 class="hero-title animate-hero-title">
-            Automotive &amp; Industrial Solutions <span class="highlight-blue">Built for Ethiopia.</span>
+            <span class="hero-dynamic-line">Automotive &amp; Industrial Solutions.</span>
+            <span class="hero-rotating-word" data-hero-rotator aria-live="polite">Powering Mobility.</span>
           </h1>
 
-          <p class="hero-description animate-hero-desc">
-            Kabod Motors connects the Ethiopian market with world-class electric mobility, high-performance Maxtorm
-            Korea energy storage, Koryo synthetic lubricants, and Sinotruk Howo heavy construction machinery sourced
-            directly from leading international manufacturers.
+          <p class="hero-description hero-dynamic-subtitle animate-hero-desc">
+            A trusted Ethiopian gateway to electric mobility, energy storage, premium lubricants and heavy machinery—bringing dependable international solutions to ambitious businesses.
           </p>
+          <div class="hero-proof-row animate-hero-desc" aria-label="Kabod Motors key strengths">
+            <span class="hero-proof-item">✓ Established in Addis Ababa</span>
+            <span class="hero-proof-item">✓ Global sourcing network</span>
+            <span class="hero-proof-item">✓ Quality without compromise</span>
+          </div>
 
           <div class="hero-ctas animate-hero-ctas">
             <a href="#contact" class="btn btn-primary">
