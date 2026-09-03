@@ -222,3 +222,13 @@
   .hero-story-title,.hero-story-copy,.hero-story-kicker,.hero-image-info,.hero-image-card img{transition:none}
   .hero-media-wrapper::before{animation:none}
 }
+
+/* Reliability override: never leave the hero blurred or stacked during a story change. */
+.hero-story-changing .hero-story-title,
+.hero-story-changing .hero-story-copy,
+.hero-story-changing .hero-story-kicker{
+  filter:none !important;
+}
+.hero-story-changing .hero-image-card img{
+  filter:none !important;
+}
