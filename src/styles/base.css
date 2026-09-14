@@ -35,29 +35,36 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 h1 {
-  font-size: clamp(2.25rem, 5vw + 1rem, 3.85rem);
+  font-size: clamp(2.75rem, 6vw, 5.75rem);
   font-weight: 800;
+  letter-spacing: var(--letter-spacing-tighter);
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: clamp(1.85rem, 3.5vw + 0.5rem, 2.75rem);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.15;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2vw + 0.5rem, 1.85rem);
+  font-size: clamp(1.4rem, 2.2vw + 0.5rem, 2rem);
+  line-height: 1.25;
 }
 
 h4 {
   font-size: 1.25rem;
+  line-height: 1.35;
 }
 
 p {
   margin-bottom: 1rem;
+  max-width: 68ch;
 }
 
 p:last-child {
@@ -114,8 +121,8 @@ button {
 
 /* Section Wrapper */
 .section {
-  padding-top: clamp(4rem, 8vw, 6.5rem);
-  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
   position: relative;
 }
 
@@ -230,7 +237,7 @@ button {
 .btn-primary:hover {
   background: var(--gradient-primary-hover);
   box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-primary:active {
@@ -247,7 +254,7 @@ button {
 .btn-secondary:hover {
   background: var(--color-surface-hover);
   border-color: var(--color-border-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-secondary:active {
@@ -264,7 +271,7 @@ button {
   background: var(--color-primary-soft);
   border-color: var(--color-primary-border);
   color: var(--color-primary);
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn-sm {

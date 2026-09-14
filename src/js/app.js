@@ -4,6 +4,7 @@
  */
 
 import { initTheme } from './theme.js';
+import { initI18n } from './i18n.js';
 import { initMotion } from './motion.js';
 import { initHeroExperience } from './heroExperience.js';
 import { initNavigation } from './navigation.js';
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const initialisers = [
     ['theme', initTheme],
+    ['i18n', initI18n],
     ['navigation', initNavigation],
     ['vehicles', initVehiclesShowcase],
     ['products', initProductShowcase],

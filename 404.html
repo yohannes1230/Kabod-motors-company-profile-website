@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found (404) | Kabod Motors</title>
+  <meta name="description" content="The page you are looking for does not exist. Return to Kabod Motors homepage for electric vehicles, energy storage, and industrial equipment.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/tokens.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <style>
+    .not-found-wrapper {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .not-found-code {
+      font-family: var(--font-mono);
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.05em;
+    }
+    .not-found-title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+    .not-found-desc {
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      margin-bottom: 2rem;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Kabod Motors home">
+        <svg class="brand-svg" viewBox="0 0 1200 200" role="img" aria-label="Kabod Motors" focusable="false">
+          <use href="/#kabod-motors-wordmark" />
+        </svg>
+      </a>
+      <a href="/" class="btn btn-primary btn-sm">Return Home</a>
+    </div>
+  </header>
+
+  <main class="not-found-wrapper">
+    <div class="not-found-code">404</div>
+    <h1 class="not-found-title">Page Not Found</h1>
+    <p class="not-found-desc">
+      The requested route or document could not be located. Explore our certified electric vehicles, battery energy systems, or contact our commercial desk.
+    </p>
+    <div class="not-found-actions">
+      <a href="/" class="btn btn-primary">Return to Homepage</a>
+      <a href="/#contact" class="btn btn-secondary">Contact Commercial Desk</a>
+    </div>
+  </main>
+</body>
+
+</html>

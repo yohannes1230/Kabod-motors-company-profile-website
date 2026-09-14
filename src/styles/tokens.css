@@ -1,148 +1,201 @@
 /**
  * KABOD MOTORS DESIGN SYSTEM TOKENS
- * Deep Navy + Electric Blue + Ice White + Graphite
- * Dual-Theme Architecture (Dark & Light Mode)
+ * Automotive & Industrial Engineering Aesthetic
+ * Dual-Theme Architecture (Obsidian & Deep Navy Dark / Warm Off-White Light)
+ * WCAG AA Contrast Compliant & 8px Spacing Grid
  */
 
 :root {
-  /* Default: Dark Theme (Automotive Engineering Obsidian & Deep Navy) */
-  --color-bg: #07111F;
-  --color-bg-secondary: #0B1728;
-  --color-surface: #101E30;
-  --color-surface-elevated: #14243A;
-  --color-surface-card: #0E1A2C;
-  --color-surface-subtle: #16263D;
-  --color-surface-hover: #1C2F4A;
+  /* ========================================================================
+     1. COLOR SYSTEM - DARK MODE (Obsidian & Deep Graphite Navy)
+     ======================================================================== */
+  --color-bg: #070D18;
+  --color-bg-secondary: #0B1322;
+  --color-surface: #0F192C;
+  --color-surface-elevated: #15223A;
+  --color-surface-card: #101B2E;
+  --color-surface-subtle: #17263F;
+  --color-surface-hover: #1D3050;
 
-  --color-text: #F5F9FF;
-  --color-text-secondary: #AAB9CC;
-  --color-text-muted: #73879F;
-  --color-text-subtle: #4D6077;
-  --color-text-inverse: #07111F;
+  /* Typography Colors (High contrast WCAG AAA/AA) */
+  --color-text: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #8497B0;
+  --color-text-subtle: #526782;
+  --color-text-inverse: #070D18;
 
-  /* Primary Brand: Deep & Electric Blue */
-  --color-primary: #1677FF;
-  --color-primary-hover: #3D91FF;
-  --color-primary-soft: rgba(22, 119, 255, 0.12);
-  --color-primary-border: rgba(22, 119, 255, 0.32);
+  /* Primary Brand: Confident Engineering Blue */
+  --color-primary: #1E6BFF;
+  --color-primary-hover: #3B82F6;
+  --color-primary-active: #1D4ED8;
+  --color-primary-soft: rgba(30, 107, 255, 0.12);
+  --color-primary-border: rgba(30, 107, 255, 0.28);
 
-  /* Official Kabod Motors logo colors */
+  /* Official Kabod Motors Brand Lockup Colors */
   --color-logo-blue: #2563EB;
   --color-logo-red: #DC2626;
-  --color-logo-underline: #6B7280;
+  --color-logo-underline: #64748B;
 
-  /* Electric Accent (Cyan) */
-  --color-accent: #19B5FE;
-  --color-accent-soft: rgba(25, 181, 254, 0.12);
-  --color-accent-border: rgba(25, 181, 254, 0.3);
+  /* Electric Accent (Reserved for Interactive Focus / Badges / Live States) */
+  --color-accent: #00D4FF;
+  --color-accent-hover: #33DCFF;
+  --color-accent-soft: rgba(0, 212, 255, 0.12);
+  --color-accent-border: rgba(0, 212, 255, 0.32);
 
-  /* Functional Status */
-  --color-success: #22C55E;
-  --color-success-soft: rgba(34, 197, 94, 0.12);
-  --color-success-border: rgba(34, 197, 94, 0.3);
+  /* Functional Status Colors */
+  --color-success: #10B981;
+  --color-success-soft: rgba(16, 185, 129, 0.12);
+  --color-success-border: rgba(16, 185, 129, 0.3);
   --color-warning: #F59E0B;
   --color-warning-soft: rgba(245, 158, 11, 0.12);
   --color-warning-border: rgba(245, 158, 11, 0.3);
+  --color-error: #EF4444;
+  --color-error-soft: rgba(239, 68, 68, 0.12);
+  --color-error-border: rgba(239, 68, 68, 0.3);
 
-  /* Borders & Dividers */
-  --color-border: rgba(255, 255, 255, 0.10);
-  --color-border-subtle: rgba(255, 255, 255, 0.06);
-  --color-border-highlight: rgba(255, 255, 255, 0.22);
-  --color-border-hover: rgba(25, 181, 254, 0.35);
+  /* Structural Borders & Dividers */
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-highlight: rgba(255, 255, 255, 0.18);
+  --color-border-hover: rgba(0, 212, 255, 0.38);
 
   /* Signature Gradients */
-  --gradient-primary: linear-gradient(135deg, #0866FF 0%, #19B5FE 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #0052D6 0%, #0798D8 100%);
-  --gradient-card: linear-gradient(180deg, rgba(16, 30, 48, 0.8) 0%, rgba(11, 23, 40, 0.95) 100%);
-  --gradient-hero-overlay: radial-gradient(circle at 75% 35%, rgba(22, 119, 255, 0.14) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(25, 181, 254, 0.08) 0%, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, #1E6BFF 0%, #00D4FF 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #1858D6 0%, #00B8E0 100%);
+  --gradient-card: linear-gradient(180deg, rgba(16, 27, 46, 0.85) 0%, rgba(11, 19, 34, 0.95) 100%);
+  --gradient-hero-overlay: radial-gradient(circle at 80% 30%, rgba(30, 107, 255, 0.16) 0%, transparent 60%),
+                           radial-gradient(circle at 15% 85%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 25px rgba(22, 119, 255, 0.25);
-  --shadow-glow-cyan: 0 0 25px rgba(25, 181, 254, 0.25);
+  /* Elevation & Shadows */
+  --elevation-0: none;
+  --elevation-1: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --elevation-2: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --elevation-3: 0 16px 44px rgba(0, 0, 0, 0.6);
+  --elevation-4: 0 28px 72px rgba(0, 0, 0, 0.75);
+  --shadow-sm: var(--elevation-1);
+  --shadow-md: var(--elevation-2);
+  --shadow-lg: var(--elevation-3);
+  --shadow-glow: 0 0 28px rgba(30, 107, 255, 0.28);
+  --shadow-glow-cyan: 0 0 28px rgba(0, 212, 255, 0.28);
 
-  /* Typography */
+  /* ========================================================================
+     2. TYPOGRAPHY
+     ======================================================================== */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4.5rem;
+  --letter-spacing-tight: -0.035em;
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-normal: -0.01em;
+  --letter-spacing-wide: 0.06em;
 
-  /* Container Max Widths */
+  /* ========================================================================
+     3. SPACING & GRID (8px Base Scale)
+     ======================================================================== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-8: 3rem;     /* 48px */
+  --space-10: 4rem;    /* 64px */
+  --space-12: 5rem;    /* 80px */
+  --space-16: 7.5rem;  /* 120px */
+  --space-20: 10rem;   /* 160px */
+
+  /* Backwards compatibility for components */
+  --spacing-xs: var(--space-1);
+  --spacing-sm: var(--space-2);
+  --spacing-md: var(--space-4);
+  --spacing-lg: var(--space-5);
+  --spacing-xl: var(--space-6);
+  --spacing-2xl: var(--space-8);
+  --spacing-3xl: var(--space-10);
+
+  --section-padding-y: clamp(5rem, 9vw, 9.5rem);
+
+  /* Containers */
   --container-max: 1320px;
   --container-narrow: 1080px;
 
   /* Border Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Overrides */
+/* ==========================================================================
+   4. COLOR SYSTEM - LIGHT THEME (Warm Off-White Editorial)
+   ========================================================================== */
 [data-theme="light"] {
-  --color-bg: #F7F9FC;
-  --color-bg-secondary: #EEF3F8;
+  --color-bg: #F8FAFC;
+  --color-bg-secondary: #F1F5F9;
   --color-surface: #FFFFFF;
   --color-surface-elevated: #FFFFFF;
   --color-surface-card: #FFFFFF;
-  --color-surface-subtle: #F0F4F9;
-  --color-surface-hover: #E4ECF4;
+  --color-surface-subtle: #F1F5F9;
+  --color-surface-hover: #E2E8F0;
 
-  --color-text: #0B1728;
-  --color-text-secondary: #526173;
-  --color-text-muted: #73879F;
-  --color-text-subtle: #98A7B8;
+  --color-text: #0B1526;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-text-subtle: #94A3B8;
   --color-text-inverse: #FFFFFF;
 
-  --color-primary: #0866FF;
-  --color-primary-hover: #0052D6;
-  --color-primary-soft: rgba(8, 102, 255, 0.08);
-  --color-primary-border: rgba(8, 102, 255, 0.25);
+  --color-primary: #1E6BFF;
+  --color-primary-hover: #1355D4;
+  --color-primary-active: #0E42A8;
+  --color-primary-soft: rgba(30, 107, 255, 0.08);
+  --color-primary-border: rgba(30, 107, 255, 0.24);
 
   --color-logo-blue: #2563EB;
   --color-logo-red: #DC2626;
-  --color-logo-underline: #6B7280;
+  --color-logo-underline: #64748B;
 
-  --color-accent: #0798D8;
-  --color-accent-soft: rgba(7, 152, 216, 0.1);
-  --color-accent-border: rgba(7, 152, 216, 0.25);
+  --color-accent: #0284C7;
+  --color-accent-hover: #0369A1;
+  --color-accent-soft: rgba(2, 132, 199, 0.1);
+  --color-accent-border: rgba(2, 132, 199, 0.28);
 
-  --color-success: #16A34A;
-  --color-success-soft: rgba(22, 163, 74, 0.1);
-  --color-success-border: rgba(22, 163, 74, 0.25);
+  --color-success: #059669;
+  --color-success-soft: rgba(5, 150, 105, 0.1);
+  --color-success-border: rgba(5, 150, 105, 0.25);
   --color-warning: #D97706;
   --color-warning-soft: rgba(217, 119, 6, 0.1);
   --color-warning-border: rgba(217, 119, 6, 0.25);
+  --color-error: #DC2626;
+  --color-error-soft: rgba(220, 38, 38, 0.1);
+  --color-error-border: rgba(220, 38, 38, 0.25);
 
-  --color-border: #DCE4ED;
-  --color-border-subtle: #E8EEF5;
-  --color-border-highlight: #B9CADB;
-  --color-border-hover: rgba(8, 102, 255, 0.4);
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
+  --color-border-highlight: #CBD5E1;
+  --color-border-hover: rgba(30, 107, 255, 0.38);
 
-  --gradient-primary: linear-gradient(135deg, #0866FF 0%, #0798D8 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #0052D6 0%, #0284C7 100%);
-  --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F9FBFE 100%);
-  --gradient-hero-overlay: radial-gradient(circle at 75% 35%, rgba(8, 102, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(7, 152, 216, 0.05) 0%, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, #1E6BFF 0%, #0284C7 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #1355D4 0%, #0369A1 100%);
+  --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  --gradient-hero-overlay: radial-gradient(circle at 80% 30%, rgba(30, 107, 255, 0.08) 0%, transparent 60%),
+                           radial-gradient(circle at 15% 85%, rgba(2, 132, 199, 0.05) 0%, transparent 50%);
 
-  --shadow-sm: 0 2px 8px rgba(11, 23, 40, 0.06);
-  --shadow-md: 0 8px 24px rgba(11, 23, 40, 0.08);
-  --shadow-lg: 0 16px 40px rgba(11, 23, 40, 0.12);
-  --shadow-glow: 0 0 20px rgba(8, 102, 255, 0.15);
-  --shadow-glow-cyan: 0 0 20px rgba(7, 152, 216, 0.15);
+  --elevation-0: none;
+  --elevation-1: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --elevation-2: 0 4px 16px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --elevation-3: 0 12px 32px rgba(15, 23, 42, 0.10), 0 4px 8px rgba(15, 23, 42, 0.05);
+  --elevation-4: 0 24px 60px rgba(15, 23, 42, 0.14), 0 8px 16px rgba(15, 23, 42, 0.06);
+  --shadow-sm: var(--elevation-1);
+  --shadow-md: var(--elevation-2);
+  --shadow-lg: var(--elevation-3);
+  --shadow-glow: 0 0 24px rgba(30, 107, 255, 0.15);
+  --shadow-glow-cyan: 0 0 24px rgba(2, 132, 199, 0.15);
 }
