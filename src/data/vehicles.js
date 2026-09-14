@@ -24,13 +24,13 @@ export const electricVehicles = [
     badge: "Flagship Luxury Off-Road (Import on Order)",
     category: "Luxury Full-Size Off-Road SUV",
     sourcingStatus: "Custom Import on Order",
-    thumbnail: "/images/GettyImages-2043061619-e1710106398958.webp",
+    thumbnail: "/images/kabod-generated-ev-showcase.webp",
     galleryImages: [
-      "/images/GettyImages-2043061619-e1710106398958.webp",
-      "/images/images (11).webp",
-      "/images.webp"
+      "/images/kabod-generated-ev-showcase.webp",
+      "/images/yangwang-u8-black-showroom.webp",
+      "/images/byd-digital-cockpit.webp"
     ],
-    verifiedRepoAsset: "GettyImages-2043061619-e1710106398958.webp & images (11).webp",
+    verifiedRepoAsset: "kabod-generated-ev-showcase.webp & yangwang-u8-black-showroom.webp",
     shortPositioning: "Ultra-luxury intelligent electric SUV featuring quad-motor independent drive, 360° tank-turn capability, and extreme all-terrain performance (Available via custom import).",
     keyHighlights: [
       "e⁴ Quad-Motor Independent All-Wheel Drive Platform",
@@ -62,14 +62,14 @@ export const electricVehicles = [
     badge: "Intelligent Fastback SUV (Import on Order)",
     category: "Mid-Size Performance Electric SUV",
     sourcingStatus: "Sourced on Client Order",
-    thumbnail: "/images/images (2).webp",
+    thumbnail: "/images/byd-sealion-7-side-profile.webp",
     galleryImages: [
-      "/images/images (2).webp",
-      "/images/images (13).webp",
-      "/images/images (14).webp",
-      "/images.webp"
+      "/images/byd-sealion-7-side-profile.webp",
+      "/images/byd-sealion-7-rear-profile.webp",
+      "/images/byd-sealion-7-horizon-showcase.webp",
+      "/images/byd-digital-cockpit.webp"
     ],
-    verifiedRepoAsset: "images (2).webp, images (13).webp, images (14).webp",
+    verifiedRepoAsset: "byd-sealion-7-side-profile.webp, byd-sealion-7-rear-profile.webp, byd-sealion-7-horizon-showcase.webp",
     shortPositioning: "Sleek aerodynamic fastback electric SUV built on BYD's ultra-advanced e-Platform 3.0 Evo with Cell-to-Body (CTB) structural battery integration.",
     keyHighlights: [
       "e-Platform 3.0 Evo with Cell-to-Body (CTB) Architecture",
@@ -100,13 +100,13 @@ export const electricVehicles = [
     badge: "Urban EV Crossover (Sourcing Portfolio)",
     category: "Compact Crossover EV",
     sourcingStatus: "Sourced on Client Order",
-    thumbnail: "/images/images (1).webp",
+    thumbnail: "/images/byd-atto-3-dark-front.webp",
     galleryImages: [
-      "/images/images (1).webp",
-      "/images/images (5).webp",
-      "/images/images.webp"
+      "/images/byd-atto-3-dark-front.webp",
+      "/images/byd-atto-3-white-rear-hatch.webp",
+      "/images/byd-digital-cockpit.webp"
     ],
-    verifiedRepoAsset: "images (1).webp (Dark edition) & images (5).webp (Glacier White)",
+    verifiedRepoAsset: "byd-atto-3-dark-front.webp (Dark edition) & byd-atto-3-white-rear-hatch.webp (Glacier White)",
     shortPositioning: "Internationally acclaimed all-electric compact SUV featuring spirited acceleration, expressive interior styling, and market-proven reliability.",
     keyHighlights: [
       "Ultra-Safe LFP Blade Battery with zero thermal runaway penetration risk",
@@ -137,13 +137,13 @@ export const electricVehicles = [
     badge: "Executive Family SUV (Sourcing Portfolio)",
     category: "Mid-Size Executive SUV",
     sourcingStatus: "Sourced on Client Order",
-    thumbnail: "/images/images (3).webp",
+    thumbnail: "/images/byd-song-plus-ev-urban-side.webp",
     galleryImages: [
-      "/images/images (3).webp",
-      "/images/images (7).webp",
-      "/images/images (6).webp"
+      "/images/byd-song-plus-ev-urban-side.webp",
+      "/images/byd-song-plus-coastal-touring.webp",
+      "/images/byd-next-gen-ev-mountain-front.webp"
     ],
-    verifiedRepoAsset: "images (3).webp (Grey SUV) & images (7).webp (Coastal Road)",
+    verifiedRepoAsset: "byd-song-plus-ev-urban-side.webp (Grey SUV) & byd-song-plus-coastal-touring.webp (Coastal Road)",
     shortPositioning: "Spacious, premium family electric SUV combining ocean aesthetics, whisper-quiet cabin acoustics, and long-distance touring comfort.",
     keyHighlights: [
       "Ocean-X Design Philosophy with low drag aerodynamic profile",
@@ -174,13 +174,13 @@ export const electricVehicles = [
     badge: "Urban Smart Mobility (Sourcing Portfolio)",
     category: "Urban Electric Hatchback",
     sourcingStatus: "Sourced on Client Order",
-    thumbnail: "/images/images (4).webp",
+    thumbnail: "/images/byd-seagull-lime-front.webp",
     galleryImages: [
-      "/images/images (4).webp",
-      "/images/images (8).webp",
-      "/images/images (12).webp"
+      "/images/byd-seagull-lime-front.webp",
+      "/images/byd-seagull-white-city-profile.webp",
+      "/images/byd-seagull-dashboard.webp"
     ],
-    verifiedRepoAsset: "images (4).webp (Green), images (8).webp (White), images (12).webp (Cockpit)",
+    verifiedRepoAsset: "byd-seagull-lime-front.webp (Green), byd-seagull-white-city-profile.webp (White), byd-seagull-dashboard.webp (Cockpit)",
     shortPositioning: "Highly agile, ultra-efficient city EV designed for daily metropolitan commuting, tight city parking, and exceptionally low running expenses.",
     keyHighlights: [
       "Compact 3.78m footprint for effortless urban maneuverability",
@@ -211,12 +211,12 @@ export const electricVehicles = [
     badge: "Compact Lifestyle Crossover (Sourcing Portfolio)",
     category: "Subcompact Electric SUV",
     sourcingStatus: "Sourced on Client Order",
-    thumbnail: "/images/images (9).webp",
+    thumbnail: "/images/byd-atto-2-champagne-side.webp",
     galleryImages: [
-      "/images/images (9).webp",
-      "/images/images.webp"
+      "/images/byd-atto-2-champagne-side.webp",
+      "/images/byd-digital-cockpit.webp"
     ],
-    verifiedRepoAsset: "images (9).webp (Champagne Compact Crossover)",
+    verifiedRepoAsset: "byd-atto-2-champagne-side.webp (Champagne Compact Crossover)",
     shortPositioning: "Youthful subcompact electric crossover combining rugged SUV ground clearance with high-efficiency urban electric driving dynamics.",
     keyHighlights: [
       "e-Platform 3.0 integration with CTB structural battery packaging",

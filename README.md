@@ -58,9 +58,9 @@
 │   ├── sitemap.xml               # XML sitemap with all core sections
 │   └── images/                   # 40 curated, optimized WebP assets
 │       ├── brilliant-bronze_Large-Landscape.webp
-│       ├── GettyImages-2043061619-e1710106398958.webp
+│       ├── kabod-generated-ev-showcase.webp
 │       ├── Howo-Tx-Dump-Truck-6x4-1.webp
-│       └── images (1..36).webp / images.webp
+│       └── images (1..36).webp / byd-digital-cockpit.webp
 ├── src/
 │   ├── data/
 │   │   ├── company.js            # Verified corporate background, vision & values

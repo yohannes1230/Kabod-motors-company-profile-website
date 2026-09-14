@@ -21,8 +21,8 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm AGM Start-Stop Battery",
     tagline: "Absorbent Glass Mat Technology for High Electrical Loads",
-    image: "/images/images (29).webp",
-    diagramImage: "/images/images (35).webp",
+    image: "/images/maxtorm-agm-start-stop-battery.webp",
+    diagramImage: "/images/maxtorm-cell-technology-diagram.webp",
     badge: "AGM / Start-Stop (Sourced on Order)",
     highlights: [
       "Engineered for modern vehicles equipped with regenerative braking & Start-Stop (ISS)",
@@ -47,8 +47,8 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm Gold-ISS / EFB Series",
     tagline: "Enhanced Flooded Battery for Idling Stop System Vehicles",
-    image: "/images/images (33).webp",
-    specLabelImage: "/images/images (32).webp",
+    image: "/images/maxtorm-gold-automotive-battery.webp",
+    specLabelImage: "/images/maxtorm-gold-iss-n70-spec-label.webp",
     badge: "Gold-ISS / EFB (Sourced on Order)",
     highlights: [
       "Optimized for micro-hybrid ISS / Idling Stop vehicle applications",
@@ -72,8 +72,8 @@ export const maxtormBatteries = [
     manufacturer: "Sebang Global Battery Co., Ltd. (South Korea)",
     name: "Maxtorm Silver Sealed Maintenance-Free (SMF)",
     tagline: "High-Reliability Automotive & Commercial Starter Battery",
-    image: "/images/images (30).webp",
-    boxedImage: "/images/images (31).webp",
+    image: "/images/maxtorm-silver-smf-battery-kit.webp",
+    boxedImage: "/images/maxtorm-gold-s120l-battery-box.webp",
     badge: "Silver SMF (Sourced on Order)",
     highlights: [
       "Zero water loss calcium-calcium expanded metal alloy technology",
@@ -98,7 +98,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo SN 5W-50 Fully Synthetic Engine Oil",
     category: "High-Performance Passenger & Performance Lubricant",
-    image: "/images/images (21).webp",
+    image: "/images/koryo-sn-5w50-engine-oil.webp",
     badge: "API SN • 5W-50 (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
@@ -122,7 +122,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo GOLD A3/B4 5W-30 Dual Engine Oil",
     category: "Dual Petrol & Diesel Passenger / Light Commercial Lubricant",
-    image: "/images/images (23).webp",
+    image: "/images/koryo-gold-5w30-engine-oil.webp",
     badge: "API SL • ACEA A3/B4 (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
@@ -146,7 +146,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo SP 10W-30 ILSAC GF-6A Synthetic Oil",
     category: "Next-Gen Emission & Timing Chain Protection Lubricant",
-    image: "/images/images (25).webp",
+    image: "/images/koryo-sp-10w30-engine-oil.webp",
     badge: "API SP • ILSAC GF-6A (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
@@ -170,7 +170,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo Synthetic Rotary Screw Compressor Oil (20L)",
     category: "Industrial Machinery & Manufacturing Fluid",
-    image: "/images/images (22).webp",
+    image: "/images/koryo-compressor-oil-20l-pail.webp",
     badge: "Industrial Long-Life (Sourcing Portfolio)",
     packSize: "20 Liters (Heavy-Duty Pail)",
     highlights: [
@@ -193,7 +193,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo LSD 80W-90 API GL-5 Axle & Gear Oil",
     category: "Heavy-Duty Drivetrain & Differential Lubricant",
-    image: "/images/images (27).webp",
+    image: "/images/koryo-lsd-80w90-gear-oil.webp",
     badge: "API GL-5 • LSD (Sourcing Portfolio)",
     packSize: "4 Liters (Tin Can)",
     highlights: [
@@ -217,7 +217,7 @@ export const koryoLubricants = [
     brand: "KORYO OIL",
     name: "Koryo 4T MOTO 10W-40 Scooter & Motorcycle Oil",
     category: "4-Stroke Small Engine Lubricant",
-    image: "/images/images (24).webp",
+    image: "/images/koryo-4t-moto-10w40-jug.webp",
     badge: "API SN • JASO MB (Sourcing Portfolio)",
     packSize: "4 Liters (Ergonomic Jug)",
     highlights: [
@@ -245,8 +245,8 @@ export const heavyMachinery = [
     image: "/images/Howo-Tx-Dump-Truck-6x4-1.webp",
     galleryImages: [
       "/images/Howo-Tx-Dump-Truck-6x4-1.webp",
-      "/images/images (15).webp",
-      "/images/images (16).webp"
+      "/images/howo-red-tipper-cab.webp",
+      "/images/howo-340-dump-truck-cab.webp"
     ],
     badge: "6x4 Heavy Hauler (Import on Order)",
     highlights: [
@@ -271,12 +271,12 @@ export const heavyMachinery = [
     brand: "SINOTRUK HOWO",
     name: "Howo High-Capacity Concrete Mixer Truck",
     category: "Transit Concrete Batching & Infrastructure Vehicle",
-    image: "/images/images (17).webp",
+    image: "/images/howo-concrete-mixer-white-drum.webp",
     galleryImages: [
-      "/images/images (17).webp",
-      "/images/images (18).webp",
-      "/images/images (19).webp",
-      "/images/images (20).webp"
+      "/images/howo-concrete-mixer-white-drum.webp",
+      "/images/howo-transit-mixer-cab.webp",
+      "/images/howo-silver-concrete-mixer.webp",
+      "/images/howo-commercial-fleet-staging.webp"
     ],
     badge: "Mixer 6x4 / 8x4 (Import on Order)",
     highlights: [
