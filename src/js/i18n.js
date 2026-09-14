@@ -58,7 +58,12 @@ export function setLanguage(lang) {
   const toggleBtn = document.getElementById('lang-toggle-btn');
   if (toggleBtn) {
     toggleBtn.textContent = lang === 'en' ? 'አማ' : 'EN';
-    toggleBtn.setAttribute('aria-label', lang === 'en' ? 'Switch to Amharic' : 'Switch to English');
+    toggleBtn.setAttribute('aria-label', lang === 'en' ? 'አማ - Switch to Amharic' : 'EN - Switch to English');
+  }
+
+  const waBtn = document.querySelector('.floating-whatsapp-btn');
+  if (waBtn) {
+    waBtn.setAttribute('aria-label', lang === 'en' ? 'Chat with Us on WhatsApp' : 'በዋትስአፕ ያናግሩን - WhatsApp');
   }
 }
 

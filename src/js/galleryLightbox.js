@@ -33,7 +33,7 @@ export function initGalleryLightbox() {
         <img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async" width="400" height="300">
         <div class="gallery-overlay">
           <span class="badge badge-cyan" style="margin-bottom: 0.35rem; align-self: flex-start;">${item.tag}</span>
-          <h5>${item.title}</h5>
+          <h3>${item.title}</h3>
           <p>${item.caption}</p>
         </div>
       </div>
@@ -45,10 +45,10 @@ export function initGalleryLightbox() {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
         b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
+        b.setAttribute('aria-pressed', 'false');
       });
       btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('aria-pressed', 'true');
       const cat = btn.getAttribute('data-filter') || 'all';
       renderGallery(cat);
     });
