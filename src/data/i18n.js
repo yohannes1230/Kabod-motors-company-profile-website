@@ -30,6 +30,9 @@ export const translations = {
       statPillars: "Strategic Pillars",
       statCatalog: "Catalog Assets"
     },
+    trust: {
+      heading: "Corporate Credentials & Verified Focus"
+    },
     about: {
       badge: "Corporate Overview",
       title: "Built on Quality. Positioned for Growth.",
@@ -93,6 +96,9 @@ export const translations = {
       statHubs: "ዓለም አቀፍ ማዕከላት",
       statPillars: "ዋና ዋና ዘርፎች",
       statCatalog: "የምርት ዓይነቶች"
+    },
+    trust: {
+      heading: "የድርጅቱ መረጃዎችና ዋና ዋና የትኩረት መስኮች"
     },
     about: {
       badge: "የድርጅት መግለጫ",

@@ -125,7 +125,11 @@ export function initHeroExperience() {
 
   function restartTimer() {
     window.clearInterval(timerId);
-    timerId = window.setInterval(advance, 4000);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      timerId = window.setInterval(() => {
+        if (!document.hidden) advance();
+      }, 4500);
+    }
   }
 
   dots.forEach(dot => {
@@ -138,7 +142,9 @@ export function initHeroExperience() {
     });
   });
 
-  // Initial state is already visible; begin automatic synchronized rotation.
+  // Initial state is already visible; begin automatic synchronized rotation after initial paint settles
   index = 0;
-  restartTimer();
+  window.setTimeout(() => {
+    restartTimer();
+  }, 5000);
 }

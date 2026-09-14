@@ -44,9 +44,11 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  </noscript>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/src/styles/tokens.css">
@@ -308,6 +310,7 @@
        ========================================================================= -->
   <section class="credibility-strip" id="trust-strip">
     <div class="container">
+      <h2 class="sr-only" data-i18n="trust.heading">Corporate Credentials &amp; Verified Focus</h2>
       <div class="credibility-grid reveal-on-scroll">
         <div class="credibility-card">
           <div class="credibility-icon">
@@ -316,7 +319,7 @@
             </svg>
           </div>
           <div class="credibility-text">
-            <strong class="credibility-title">Established 2016</strong>
+            <h3 class="credibility-title">Established 2016</h3>
             <p>Founded by Abiy Belay Belete</p>
           </div>
         </div>
@@ -328,7 +331,7 @@
             </svg>
           </div>
           <div class="credibility-text">
-            <strong class="credibility-title">Electric Mobility</strong>
+            <h3 class="credibility-title">Electric Mobility</h3>
             <p>High-efficiency EV sourcing</p>
           </div>
         </div>
@@ -342,7 +345,7 @@
             </svg>
           </div>
           <div class="credibility-text">
-            <strong class="credibility-title">Energy Storage</strong>
+            <h3 class="credibility-title">Energy Storage</h3>
             <p>Maxtorm Korea technology</p>
           </div>
         </div>
@@ -354,7 +357,7 @@
             </svg>
           </div>
           <div class="credibility-text">
-            <strong class="credibility-title">Koryo Lubricants</strong>
+            <h3 class="credibility-title">Koryo Lubricants</h3>
             <p>100% Synthetic engine fluids</p>
           </div>
         </div>
@@ -368,7 +371,7 @@
             </svg>
           </div>
           <div class="credibility-text">
-            <strong class="credibility-title">Global Supply</strong>
+            <h3 class="credibility-title">Global Supply</h3>
             <p>Korea • China • UAE sister co.</p>
           </div>
         </div>
@@ -377,7 +380,7 @@
       <!-- Verified Brand & Sourcing Partners Strip -->
       <div class="brand-partner-strip reveal-on-scroll stagger-2">
         <div class="brand-partner-header">
-          <span class="brand-partner-label">Global Manufacturing &amp; Sourcing Partners</span>
+          <h3 class="brand-partner-label">Global Manufacturing &amp; Sourcing Partners</h3>
         </div>
         <div class="brand-partner-grid">
           <div class="brand-partner-item">
@@ -1439,9 +1442,9 @@
       </svg>
     </button>
     <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="Enlarged view">
+      <img id="lightbox-img" src="" alt="Enlarged view" width="1200" height="800">
       <div class="lightbox-caption">
-        <h4 id="lightbox-title"></h4>
+        <h3 id="lightbox-title">Kabod Media View</h3>
         <p id="lightbox-caption"></p>
       </div>
     </div>
@@ -1500,7 +1503,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Business Solutions</h4>
+          <h3>Business Solutions</h3>
           <ul class="footer-links">
             <li><a href="#solutions">Electric Vehicles</a></li>
             <li><a href="#solutions">Maxtorm Energy Storage</a></li>
@@ -1512,7 +1515,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Company &amp; Sourcing</h4>
+          <h3>Company &amp; Sourcing</h3>
           <ul class="footer-links">
             <li><a href="#about">About Kabod Motors</a></li>
             <li><a href="#about">Governance Structure</a></li>
@@ -1524,7 +1527,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Head Office Contact</h4>
+          <h3>Head Office Contact</h3>
           <p style="color: var(--color-text-secondary); margin-bottom: 0.25rem;">Addis Ababa, Bole Sub-City</p>
           <p style="color: var(--color-text-muted); font-size: 0.8rem; margin-bottom: 0.75rem;">Jacros Area, Around
             Faith Bible Intl. Church</p>

@@ -548,6 +548,7 @@
   color: var(--color-primary);
 }
 
+.credibility-text h3,
 .credibility-text h4,
 .credibility-text .credibility-title {
   display: block;
@@ -555,6 +556,7 @@
   font-weight: 700;
   margin-bottom: 0.15rem;
   color: var(--color-text);
+  line-height: 1.25;
 }
 
 .credibility-text p {
@@ -2133,6 +2135,7 @@ textarea.form-control {
   }
 }
 
+.footer-col h3,
 .footer-col h4 {
   font-size: 1rem;
   color: var(--color-text);
@@ -2253,6 +2256,8 @@ textarea.form-control {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.25;
 }
 
 .brand-partner-grid {

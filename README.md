@@ -122,6 +122,7 @@ VITE_FORM_ENDPOINT=https://formspree.io/f/your_form_id
 - Safe DOM rendering prevents XSS vulnerabilities.
 - Anti-spam honeypot filtering protects lead generation from automated bot submissions.
 - Secrets, `.env` files, and local credentials are strictly excluded via `.gitignore`.
+- **Content Security Policy (CSP) Tradeoff**: `script-src` and `style-src` currently include `'unsafe-inline'`. This is a known, deliberate partial-hardening tradeoff (not a full CSP) required to support Vite theme hydration bootstrapping and inline dynamic styling without nonce infrastructure. It restricts external script sources to trusted origins (`'self' https://plausible.io`), blocks object embedding (`object-src 'none'`), and restricts framing (`frame-src` to Google Maps), but does **not** provide complete protection against inline script injection. Future revisions can transition to nonce-based or hash-based CSP if dynamic server-side header generation is introduced.
 
 ---
 

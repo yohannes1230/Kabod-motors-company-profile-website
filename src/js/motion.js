@@ -27,12 +27,12 @@ export function initMotion() {
     const counterElements = document.querySelectorAll('[data-counter]');
     if (!counterElements.length) return;
 
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || isMobile) {
       counterElements.forEach(el => {
         const target = el.getAttribute('data-counter');
         const suffix = el.getAttribute('data-counter-suffix') || '';
         const prefix = el.getAttribute('data-counter-prefix') || '';
-        el.textContent = `${prefix}${target}${suffix}`;
+        el.textContent = `${prefix}${parseFloat(target).toLocaleString()}${suffix}`;
       });
       return;
     }
