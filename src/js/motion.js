@@ -15,6 +15,7 @@ export function initMotion() {
     if (heroVideo) {
       heroVideo.pause();
       heroVideo.removeAttribute('autoplay');
+      heroVideo.style.display = 'none';
     }
     if (supportVideo) {
       supportVideo.pause();

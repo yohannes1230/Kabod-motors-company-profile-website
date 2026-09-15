@@ -427,13 +427,13 @@
 
 .hero-image-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
   transform: scale(1.01);
-  transition: transform var(--transition-smooth);
-  opacity: 0;
-  z-index: 0;
+  transition: transform var(--transition-smooth), opacity var(--transition-normal);
+  opacity: 1;
+  z-index: 1;
 }
 
 .hero-image-card:hover img {

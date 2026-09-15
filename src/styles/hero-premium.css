@@ -245,5 +245,6 @@
   transform:translateY(8px);
 }
 .hero-image-card img{
+  opacity: 1;
   filter:none !important;
 }

@@ -11,11 +11,12 @@ export function initHeroExperience() {
       kicker: 'Electric Mobility',
       title: 'Tomorrow’s Drive, Today.',
       copy: 'Discover intelligent electric mobility that brings innovation, comfort and a new driving experience closer to Ethiopia.',
-      image: '/images/kabod-generated-ev-showcase.webp',
+      image: '/images/byd-yangwang-u8-showcase.webp',
       alt: 'BYD Yangwang U8 electric luxury SUV',
       imageTitle: 'BYD Yangwang U8',
       imageSubtitle: 'Intelligent flagship electric mobility',
-      badge: 'Electric Mobility'
+      badge: 'Electric Mobility',
+      hasVideo: true
     },
     {
       kicker: 'Automotive Energy',
@@ -25,7 +26,8 @@ export function initHeroExperience() {
       alt: 'Maxtorm Korea automotive battery',
       imageTitle: 'Maxtorm Korea',
       imageSubtitle: 'High-performance automotive battery solutions',
-      badge: 'Energy Solutions'
+      badge: 'Energy Solutions',
+      hasVideo: false
     },
     {
       kicker: 'Premium Lubricants',
@@ -35,7 +37,8 @@ export function initHeroExperience() {
       alt: 'Koryo premium engine oil',
       imageTitle: 'Koryo Oil',
       imageSubtitle: 'Premium lubrication for demanding engines',
-      badge: 'Premium Lubricants'
+      badge: 'Premium Lubricants',
+      hasVideo: false
     },
     {
       kicker: 'Heavy Industry',
@@ -45,7 +48,8 @@ export function initHeroExperience() {
       alt: 'Sinotruk Howo heavy-duty dump truck',
       imageTitle: 'Sinotruk Howo',
       imageSubtitle: 'Heavy-duty solutions for serious work',
-      badge: 'Heavy Machinery'
+      badge: 'Heavy Machinery',
+      hasVideo: false
     }
   ];
 
@@ -55,6 +59,7 @@ export function initHeroExperience() {
     title: $('[data-story-title]'),
     copy: $('[data-story-copy]'),
     image: $('[data-story-image]'),
+    video: hero.querySelector('video.hero-video'),
     imageTitle: $('[data-story-image-title]'),
     imageSubtitle: $('[data-story-image-subtitle]'),
     badge: $('[data-story-badge]'),
@@ -62,7 +67,7 @@ export function initHeroExperience() {
   };
   const dots = [...hero.querySelectorAll('[data-story-index]')];
 
-  if (Object.values(elements).some(el => !el)) {
+  if (!elements.image || !elements.title) {
     console.error('Kabod hero: required story elements were not found.');
     return;
   }
@@ -85,6 +90,19 @@ export function initHeroExperience() {
       elements.badge.textContent = story.badge;
       elements.current.textContent = String(nextIndex + 1).padStart(2, '0');
 
+      const isMobile = window.innerWidth < 768;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (elements.video) {
+        if (story.hasVideo && !isMobile && !prefersReducedMotion) {
+          elements.video.style.display = 'block';
+          elements.video.play().catch(() => {});
+        } else {
+          elements.video.style.display = 'none';
+          elements.video.pause();
+        }
+      }
+
       elements.image.onload = () => {
         elements.image.classList.remove('is-loading');
       };
@@ -95,6 +113,7 @@ export function initHeroExperience() {
       elements.image.classList.add('is-loading');
       elements.image.src = story.image;
       elements.image.alt = story.alt;
+      elements.image.style.opacity = '1';
 
       dots.forEach((dot, i) => {
         const active = i === nextIndex;
